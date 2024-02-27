@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "MoonGet";
+  src: url("../fonts/moon_get-Heavy.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "MoonGet"; /* Correction: Utilisation de la police "MoonGet" */
+}
+
+header {
+  height: 100vh;
+  width: 100vw; /* Correction: Utilisation de 100vw pour la largeur */
+  background-color: red;
+}
+
+.navbar {
+  position: absolute;
+  margin: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links ul {
+  display: flex;
+}
+
+.navbar .nav-links ul li {
+  margin: 0 25px;
+}
+
+.deconnect {
+  color: #d92715;
+} /* Correction: Ajout du point-virgule à la fin */
