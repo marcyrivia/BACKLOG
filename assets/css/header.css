@@ -1,0 +1,141 @@
+@font-face {
+  /* font-family: "MoonGet";
+  src: url("../fonts/moon_get-Heavy.ttf"); */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+/* HEADER */
+
+header {
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background: #A918FD;
+}
+.logo {
+  color: #fefefe;
+}
+
+.a-logo{
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.navbar ul li a {
+  list-style: none;
+  text-decoration: none;
+  color: #fefefe;
+  display: block;
+  font-size: 20px;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.2s;
+  margin: 0 5px;
+}
+
+.userPicH {
+  height: 20px;
+}
+
+.navbar ul li a:hover {
+  color: #A918FD;
+  background: #fefefe;
+}
+
+.navbar .deconnect {
+  color: #d92715;
+} /* Correction: Ajout du point-virgule à la fin */
+
+.navbar .deconnect:hover {
+  color: #fefefe;
+  background: #d92715;
+}
+
+#search-bar {
+  height: 25px;
+  border: solid 2px black;
+  border-radius: 5px;
+  background-color: #A918FD;
+}
+
+.menu-burger {
+  display: none;
+}
+
+@media only screen and (max-width: 1320px) {
+  header {
+    padding: 0 50px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  header {
+    padding: 0 50px;
+  }
+}
+@media only screen and (max-width: 1014px) {
+  .menu-burger {
+    display: block;
+    cursor: pointer;
+  }
+  .menu-burger .bi-list {
+    width: 30px;
+    height: 3px;
+    font-size: 4vh;
+    color: #fefefe;
+    margin: 6px 0;
+  }
+  .navbar {
+    height: 0;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #11101b;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .navbar.active {
+    height: 350px;
+  }
+
+  .navbar .nav-list {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .navbar.active .nav-list {
+    opacity: 1;
+  }
+
+  .navbar ul li a {
+    margin-bottom: 12px;
+  }
+}
+
+/* FIN HEADER  */

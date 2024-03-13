@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'PoppinsSemiB'; /* Nom de la police */
+  src:  url('../fonts/Poppins-SemiBold.ttf');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "PoppinsSemiB", sans-serif;
+}
+
+.userPic {
+  height: 35px;
+}
+
+.bienvenue-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.pseudo {
+  font-weight: bold;
+}
