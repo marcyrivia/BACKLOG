@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "PoppinsSemiB"; /* Nom de la police */
+  src: url("../fonts/Poppins-SemiBold.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "PoppinsSemiB", sans-serif;
+  background-color: #292626;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+}
+
+nav{
+  margin-top: 3rem;
+}
+ul{
+  display: flex;
+  flex-direction: row;
+}
+
+li{
+  list-style: none;
+  margin-left: 3vh;
+  color: #35509c;
+}
+
+
+.container {
+  margin-left: 2vh;
+  margin-right: 2vh;
+  margin-top: 4vh;
+}
+
+.infos-container {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user_picture {
+  border-radius: 5px;
+  width : 170px;
+  height: 160px;
+}
+
+.btnEditPicture::file-selector-button {
+  height: 40px;
+  margin-top: 1.5rem;
+  color: #fefefe;
+  background-color: #35509c;
+  border: none;
+  border-radius: 10px;
+  width: 140px;
+  font-weight: bold;
+}
+
+.inputPseudo {
+  margin-top: 15px;
+  font-size: 15px;
+  text-align: center;
+  color: #fefefe;
+  background-color: #292626;
+  border: none;
+  border-bottom: gray solid 2px;
+  height: 3vh;
+  text-size-adjust: 3vh;
+}
+
+span {
+  color: gray;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.changeMail{
+  background-color: #35509c;
+  color: #fefefe;
+  height: 40px;
+  width: 170px;
+  border-radius: 10px;
+  border: none;
+  color: #fefefe;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.profil-container {
+  margin-top: 2rem;
+}
+.desc-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.desc {
+  color: #35509c;
+}
+
+.descrInput {
+  height: 10vh;
+  width: 25vh;
+  margin-top: 3vh;
+  color: #fefefe;
+  background-color: #292626;
+  border: none;
+  border-bottom: gray solid 2px;
+}
+
+.favgamestext {
+  margin-top: 2rem;
+  color: #35509c;
+}
+
+hr {
+  border: 1px solid #3d3838;
+  width: 14rem;
+}
+
+.favgames-container {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.games {
+  background-color: #3d3838;
+  border-radius: 5px;
+  border: #35509c 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s; /* Animation */
+  height: 20rem;
+  width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.games:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.bi-plus-lg {
+  color: #35509c;
+  font-size: 40px;
+  font-style: bold;
+}
+
+.click{
+  position: fixed;
+  z-index: 1;
+  margin-left: 41rem;
+  margin-top: 25rem;
+  background-color: #3d3838;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 15vh;
+  width: 50vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.click.active {
+  display: flex; /* Affichage lorsque la classe active est appliquée */ 
+}
+
+.searchBar{
+  height: 2rem;
+  width: 60%;
+  background-color: #3d3838;
+  color: #fefefe;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  border-bottom: #35509c solid 3px;
+}
+
+.bi-search{
+  color: #35509c;
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.close{
+  background-color: #b00202;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: #fefefe;
+  height: 35px;
+  width: 170px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bolder;
+  margin-top: 15px;
+}
+
+.close:hover{
+  cursor: pointer;
+  background-color: #cf1313;
+}
+
+.lineBottom {
+  margin-top: 3rem;
+  width: 50%;
+
+} 
+
+.inputEmail{
+  margin-top: 40px;
+  height: 1rem;
+  background-color: #292626;
+  color: #fefefe;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  border-bottom: #35509c solid 3px;
+}
+.footerBtn {
+  margin-top: 5rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+}
+
+.delete {
+  background-color: #b00202;
+  color: #fefefe;
+  height: 40px;
+  width: 170px;
+  border-radius: 10px;
+  border: none;
+  color: #fefefe;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.valid {
+  background-color: #35509c;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-left: 2rem;
+  color: #fefefe;
+  height: 40px;
+  width: 170px;
+  border-radius: 10px;
+  border: none;
+  color: #fefefe;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.error {
+  color: #b00202;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+@media only screen and (max-width: 1720px) {
+  .gamesDiv {
+    padding: 0 50px;
+  }
+}
+@media only screen and (max-width: 1286px) {
+  .games {
+    height: 20rem;
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .games {
+    height: 15rem;
+    width: 10rem;
+  }
+}
+
+
+/* .pseudoP {
+  color: #fefefe;
+} */
+/* .btnEditPicture {
+  position: absolute;
+  margin-left: 25rem;
+  background-color: #35509c;
+  border-radius: 12px;
+  color: #fefefe;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 10%;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.btnEditPicture:not(:disabled):hover,
+.btnEditPicture:not(:disabled):focus {
+  outline: 0;
+  background: #415fb3;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+.btnEditPicture:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+/* .navbarP ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.navbarP ul li {
+  list-style: none;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+} */

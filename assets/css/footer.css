@@ -35,7 +35,7 @@ footer img{
 }
 #containerFooter  h3:hover, #containerFooter p:hover
 {
-    color: #A918FD;
+    color: #415FB3;
     cursor: pointer;
 }
 
@@ -47,7 +47,7 @@ footer img{
     font-family: "Burford";
     font-size: 1.5rem;
     margin: 0;
-    color: #A918FD;
+    color: #415FB3;
 }
 
 #webFooter
@@ -82,8 +82,8 @@ footer img{
 #credit a::after
 {
 content: "";
-background: #A918FD;
-mix-blend-mode: hard-light;
+background: #415FB3;
+mix-blend-mode: screen;
 width: calc(100% + 18px);
 height: 0;
 position: absolute;
@@ -107,7 +107,7 @@ transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .bi:hover{
-    color: #A918FD;
+    color: #415FB3;
     cursor: pointer;
 }
 /* ----------------------------- MEDIA QUERY --------------------------- */

@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "PoppinsSemiB"; /* Nom de la police */
+  src: url("../fonts/Poppins-SemiBold.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "PoppinsSemiB", sans-serif;
+  background-color: #292626;
+}
+
+.container-fluid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.container {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+img {
+  max-width: 100%;
+  height: 25rem;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#movie-title{
+    margin-top: 15px;
+    color: #35509c;
+    text-align: center;
+}
+
+#rated-movie{
+  color: #fefefe;
+  font-size: 3rem;
+}
+
+.navbar-infos{
+margin-top: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#movie-release-date{
+    margin-left: 3rem;
+    font-size: 15px;
+    color: #fefefe;
+    
+}
+
+#movie-duration{
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.synopsis-container{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 90%;
+    /* text-align: center; */
+    display: flex;
+    text-align: justify; /* Justification */
+    text-align-last: center; /* Alignement du dernier bloc */
+    flex-direction: column;
+}
+
+@media screen {
+  
+}
+
+.synopsis{
+    color: #35509c;
+}
+
+#movie-synopsis{
+  color: #fefefe;
+}
+
+/* rated */
+
+.stars{
+  font-size: 3rem;
+  color: rgb(68, 65, 65);
+  cursor: pointer;
+  transition: color 0.2 ease;
+}
+
+.hover{
+  color: #35509c;
+}

@@ -174,6 +174,63 @@ class User
             echo 'Erreur : ' . $e->getMessage();
             die();
         }
+    } 
+    public static function modifier(int $user_id, string $user_pseudo, string $user_email, string $user_picture, string $user_descr)
+    {
+        try {
+            // Création d'un objet $db selon la classe PDO
+            $db = new PDO("mysql:host=localhost;dbname=" . DB_NAME, DB_USER, DB_PASS);
+    
+            // stockage de ma requete dans une variable
+            $sql = "UPDATE `userprofil` SET  `user_pseudo` = :user_pseudo, `user_email` = :user_email, `user_picture` = :user_picture,  `user_descr` = :user_descr WHERE `user_id` = :user_id";
+    
+            // je prepare ma requête pour éviter les injections SQL
+            $query = $db->prepare($sql);
+    
+            // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
+            $query->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+            $query->bindValue(':user_pseudo', htmlspecialchars($user_pseudo), PDO::PARAM_STR);
+            $query->bindValue(':user_email', htmlspecialchars($user_email), PDO::PARAM_STR);
+            $query->bindValue(':user_picture', htmlspecialchars($user_picture), PDO::PARAM_STR);
+            $query->bindValue(':user_descr', htmlspecialchars($user_descr), PDO::PARAM_STR);
+                
+    
+            // on execute la requête
+            $query->execute();
+    
+            // Vérifie si la mise à jour a réussi
+            $affectedRows = $query->rowCount();
+            if ($affectedRows == 0) {
+                throw new Exception("La mise à jour du profil a échoué.");
+            }
+        } catch (PDOException $e) {
+            echo 'Erreur : ' . $e->getMessage();
+            die();
+        }
+    } 
+    
+    public static function deleteUser(int $user_id)
+    {
+
+
+        try {
+
+
+
+            // Création de l'objet PDO pour la connexion à la base de données
+            $db = new PDO("mysql:host=localhost;dbname=" . DB_NAME, DB_USER, DB_PASS);
+            // Paramétrage des erreurs PDO pour les afficher en cas de problème
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "DELETE FROM `userprofil` WHERE `user_id` = :user_id";
+            // Préparation de la requête
+            $query = $db->prepare($sql);
+            $query->bindValue(":user_id", $user_id, PDO::PARAM_INT);
+            $query->execute();
+        } catch (PDOException $e) {
+            // En cas d'erreur, affichage du message d'erreur et arrêt du script
+            echo "Erreur : " . $e->getMessage();
+            die();
+        }
     }
 
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="../assets/css/header.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Document</title>
   </head>
@@ -15,33 +15,38 @@
       </div>
       <nav class="navbar">
         <ul class="nav-list">
+        <!-- <form id="searchForm" action="../controllers/controller-results.php" method="POST">
           <label for="search"></label>
           <input
             type="text"
             name="search"
-            id="search-bar"
+            id="searchBar"
             placeholder="Recherchez votre jeu"
           />
+          <button id="boutonSearch"> Rechercher</button>
+          </form> -->
           <li>
-            <a href="./controllers/controller-home.php">Home</a>
+            <a href="../controllers/controller-home.php">Home</a>
           </li>
           <li>
-            <a href="./controllers/controller-games.php">Games</a>
+            <a href="../controllers/controller-movies.php">Films</a>
           </li>
           <li>
-            <a href="./controllers/controller-list.php">List</a>
+            <a href="../controllers/controller-randomizer.php">Randomizer</a>
           </li>
           <li>
-            <a href="./controllers/controller-profil.php">Profil</a>
+            <a href="../controllers/controller-profil.php">Profil</a>
           </li>
           <li>
-            <a href="./controllers/controller-deconnect.php" class="deconnect"
+            <a href="../controllers/controller-deconnect.php" class="deconnect"
               >Déconnexion</a
             >
           </li>
         </ul>
       </nav>
     </header>
+
+    <!-- <script src="../assets/js/searchbar.js"></script> -->
     <script>
       hamburger = document.querySelector('.menu-burger');
       hamburger.onclick = function(){

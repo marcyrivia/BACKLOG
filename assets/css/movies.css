@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "PoppinsSemiB"; /* Nom de la police */
+  src: url("../fonts/Poppins-SemiBold.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "PoppinsSemiB", sans-serif;
+  background-color: #292626;
+}
+
+.container-all {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.search-container{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#searchBar{
+  height: 25px;
+  border: solid 1px #35509c;
+  padding: 0 10px 0 10px;
+  border-radius: 5px;
+  background-color: #292626;
+  color: #fefefe;
+}
+
+#buttonSearch{
+  color: #fefefe;
+  background-color: #35509c;
+  font-weight: bolder;
+  font-size: 15px;
+  border: #35509c solid 3px;
+  border-radius: 5px; 
+  width: 8rem;
+  margin-left: 10px;
+}
+
+#buttonSearch:hover{
+  background-color: #5571bd;
+  border: #5571bd solid 3px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 25px;
+  padding-bottom: 10rem;
+ 
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.imageMovie {
+  max-width: 100%;
+  height: 15em;
+  border-radius: 15px;
+}
+
+.overlayF{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15em;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlayF p {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.card:hover .overlayF {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.latestBtn{
+  border: #35509c solid 3px;
+  background-color: #292626;
+  color: #35509c;
+  border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.topRatedBtn{
+  border: #35509c solid 3px;
+  background-color: #292626;
+  color: #35509c;
+  border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+
+.On{
+  color: #fefe;
+  background-color: #35509c;
+  border: #35509c solid 3px;
+  border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+/* .Off{
+  color: #35509c;
+  background-color: #292626;
+  border-radius: 3px solid #35509c;
+} */
