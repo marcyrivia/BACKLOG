@@ -11,35 +11,31 @@
 </head>
 <body>
     <!-- HEADER -->
-     <?php include_once '../assets/header.php' ?> 
+    <?php include_once '../assets/header.php' ?> 
     <!-- FIN DU HEADER -->
 
     <div class="container-all">
-      <div class="search-container">
-        <label for="search"></label>
-        <input type="text" name="search" id="searchBar" placeholder="Recherchez un film" />
-        <button id="buttonSearch"> Rechercher</button>
-      </div>
-          <div class="button-container">
+        <div class="search-container">
+            <label for="search"></label>
+            <input type="text" name="search" id="searchBar" placeholder="Recherchez un film" />
+            <button id="buttonSearch"> Rechercher</button>
+        </div>
+        <div class="button-container">
             <button id="latestBtn" class="latestBtn">Dernières Sorties</button>
             <button id="topRatedBtn" class="topRatedBtn">Mieux notés</button>
-          </div>
-
-      <div id="latest"></div>
-      <div id="topRated"></div>
-      <div id="infos" class="card-container">
-        <div class="card">
-          
         </div>
 
-      </div> 
-
+        <div id="latest"></div>
+        <div id="topRated"></div>
+        <div id="infos" class="card-container">
+            <div class="card"></div>
+        </div> 
     </div>
     
-     <!-- FOOTER -->
-     <?php include_once '../assets/footer.php' ?> 
-<!-- FIN FOOTER -->
+    <!-- FOOTER -->
+    <?php include_once '../assets/footer.php' ?> 
+    <!-- FIN FOOTER -->
 
-<script type="module" src="../assets/js/movies.js"></script>
+    <script type="module" src="../assets/js/movies.js"></script>
 </body>
 </html>

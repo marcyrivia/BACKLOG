@@ -18,7 +18,7 @@ randomBtn.addEventListener("click", function (){
     // Nettoyer le contenu de movieContainer
     movieContainer.innerHTML = '';
     
-    fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=1', options)
+    fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=2', options)
     .then(res => res.json())
     .then(data => {
         const randomIndex = Math.floor(Math.random() * data.results.length);

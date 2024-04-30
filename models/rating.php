@@ -5,7 +5,6 @@ require_once "../config/config.php";
 class Rating {
 
     /**
-     * Méthode permettant de créer un utilisateur
      *
      * @param int    $Note_id 
      * @param string $Note_score        
@@ -21,7 +20,7 @@ class Rating {
           $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
           // Requête SQL d'insertion des données dans la table userprofil
-          $sql = "INSERT INTO `note`(`Note_score`, `user_id`, ) VALUES (:Note_score, :user_id,)";
+          $sql = "INSERT INTO `note`(`Note_score`, `user_id`) VALUES (:Note_score, :user_id)";
 
           // Préparation de la requête
           $query = $db->prepare($sql);

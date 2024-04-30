@@ -8,8 +8,8 @@
     <title>Titre du film</title>
 </head>
 <body>
-        <!-- HEADER -->
-        <?php include_once '../assets/header.php' ?> 
+    <!-- HEADER -->
+    <?php include_once '../assets/header.php' ?> 
     <!-- FIN DU HEADER -->
     <div class="container-fluid">
         <div class="container">
@@ -18,18 +18,19 @@
             <span id="rated-movie">**%</span>
         </div>
 
-        <form action="controller-oneMovie.php" method="post"></form>
-        <div class="star-container">
-        <i class=" stars bi-star-fill"></i>
-        <i class=" stars bi-star-fill"></i>
-        <i class=" stars bi-star-fill"></i>
-        <i class=" stars bi-star-fill"></i>
-        <i class=" stars bi-star-fill"></i>
-      </div>
+        <form action="controller-oneMovie.php" method="get">
+            <div class="star-container">
+                <i class="stars bi-star-fill"></i>
+                <i class="stars bi-star-fill"></i>
+                <i class="stars bi-star-fill"></i>
+                <i class="stars bi-star-fill"></i>
+                <i class="stars bi-star-fill"></i>
+            </div>
+        </form>
       
-      <div class="navbar-infos">
-          <span id="movie-duration">Durée du Film</span>
-          <span id="movie-release-date">Date de sortie</span>
+        <div class="navbar-infos">
+            <span id="movie-duration">Durée du Film</span>
+            <span id="movie-release-date">Date de sortie</span>
         </div>
         
         <div class="synopsis-container">
@@ -40,7 +41,8 @@
     <!-- FOOTER  -->
     <?php include_once '../assets/footer.php' ?> 
     <!-- FIN FOOTER -->
-    
+
+    <!-- Inclure jQuery -->
     <script src="../assets/js/Onemovies.js"></script>
     <script src="../assets/js/rating.js"></script>
 </body>
