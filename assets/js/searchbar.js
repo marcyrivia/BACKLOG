@@ -48,7 +48,6 @@ bouton.addEventListener("click", function () {
         }
     };
     let movieSearch = document.querySelector("#searchBar").value
-    console.log(movieSearch);
     fetch(`https://api.themoviedb.org/3/search/movie?query=${movieSearch}&include_adult=false&language=fr-FR&page=1`, options)
     .then(res => res.json())
     .then(data => {

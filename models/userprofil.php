@@ -198,11 +198,11 @@ class User
             // on execute la requête
             $query->execute();
     
-            // Vérifie si la mise à jour a réussi
-            $affectedRows = $query->rowCount();
-            if ($affectedRows == 0) {
-                throw new Exception("La mise à jour du profil a échoué.");
-            }
+            // // Vérifie si la mise à jour a réussi
+            // $affectedRows = $query->rowCount();
+            // if ($affectedRows == 0) {
+            //     throw new Exception("La mise à jour du profil a échoué.");
+            // }
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
             die();

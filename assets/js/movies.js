@@ -83,7 +83,7 @@ topRatedBtn.addEventListener("click", function () {
     infos.innerHTML = "";
 
     // Requête fetch pour obtenir les films les mieux notés.
-    fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=1', options)
+    fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR', options)
     .then(res => res.json())
     .then(data => {
         console.log(data)

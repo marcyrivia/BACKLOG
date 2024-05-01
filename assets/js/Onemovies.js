@@ -23,6 +23,7 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
     const movieRatedMultiplied = Math.floor(movieRated * 10);
     const movieRatedWithPercentage = movieRatedMultiplied + '%';
     const movieImage = document.createElement('img');
+    movieImage.classList.add('movieImage');
     movieImage.src = moviePosterURL;
     movieImage.alt = movieDetails.title;
     document.getElementById('movie-image-container').appendChild(movieImage);
