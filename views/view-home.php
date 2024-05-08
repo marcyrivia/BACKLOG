@@ -34,14 +34,6 @@
 </div>
 <!-- FIN PROCHAINES SORTIES -->
 
-<!-- JEUX LES PLUS POPULAIRES -->
-<div class="popular-container">
-    <h2>Films populaires</h2>
-    <div class="carousel-upcoming"></div>
-    <hr class="hrDeux">
-    <div class="popularGames-container"></div>
-</div>
-<!-- FIN JEUX LES PLUS POPULAIRES -->
 
 <!-- FOOTER -->
 <?php include_once '../assets/footer.php' ?> 

@@ -135,7 +135,23 @@ hr {
   align-items: center;
 }
 
-.games {
+.movies{
+  background-color: #3d3838;
+  border-radius: 5px;
+  border: #35509c 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s; /* Animation */
+  height: 20rem;
+  width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.movies:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.movie-poster{
   background-color: #3d3838;
   border-radius: 5px;
   border: #35509c 2px solid;
@@ -148,14 +164,14 @@ hr {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.games:hover {
-  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+
+
 
 .bi-plus-lg {
   color: #35509c;
   font-size: 40px;
   font-style: bold;
+  display: flex;
 }
 
 .movieImage{
@@ -165,7 +181,7 @@ hr {
   border-radius: 5px;
 }
 
-.click{
+.click1{
   position: fixed;
   z-index: 1;
   margin-left: 26rem;
@@ -180,9 +196,57 @@ hr {
 
 }
 
-.click.active {
-  display: flex; /* Affichage lorsque la classe active est appliquée */ 
+/* .click1.active {
+  display: flex; 
+} */
+.click2{
+  position: fixed;
+  z-index: 1;
+  margin-left: 26rem;
+  margin-top: 5rem;
+  background-color: #3d3838;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 80%;
+  width: 50%;
+  display: none;
+  flex-direction: column;
+
 }
+
+
+.click3{
+  position: fixed;
+  z-index: 1;
+  margin-left: 26rem;
+  margin-top: 5rem;
+  background-color: #3d3838;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 80%;
+  width: 50%;
+  display: none;
+  flex-direction: column;
+
+}
+
+
+.click4{
+  position: fixed;
+  z-index: 1;
+  margin-left: 26rem;
+  margin-top: 5rem;
+  background-color: #3d3838;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 80%;
+  width: 50%;
+  display: none;
+  flex-direction: column;
+
+}
+
+
 
 .searchBar{
   height: 2rem;
@@ -197,7 +261,7 @@ hr {
   margin-top: 10px;
 }
 
-#buttonSearch{
+.buttonSearch{
   color: #fefefe;
   background-color: #35509c;
   font-weight: bolder;
@@ -208,7 +272,7 @@ hr {
   margin-left: 10px;
 }
 
-#buttonSearch:hover{
+.buttonSearch:hover{
   background-color: #5571bd;
   border: #5571bd solid 3px;
 }

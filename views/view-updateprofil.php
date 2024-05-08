@@ -12,8 +12,61 @@
   
   <div class="container">
 
-    <!-- Barre de recherche -->
-    <div class="click">
+    <!-- click 1-->
+    <div class="click1">
+      <div class="search-container">
+        <label for="search"></label>
+        <!-- Champ de saisie pour la recherche -->
+        <input id="searchBar" name="search" class="searchBar" type="text" placeholder="Rechercher un film">
+        <!-- Bouton de recherche -->
+        <button class="buttonSearch" id="buttonSearch"> Rechercher</button>
+      </div>
+      <!-- Carte pour afficher les informations du film -->
+      <div id="infos" class="card-container">
+        <div class="card"></div>
+      </div> 
+      <!-- Icône de fermeture -->
+      <i class="close bi bi-x"></i>
+    </div>
+
+
+    <div class="click2">
+  <div class="search-container">
+    <label for="searchBar2"></label>
+    <!-- Champ de saisie pour la recherche -->
+    <input id="searchBar2" name="searchBar2" class="searchBar" type="text" placeholder="Rechercher un film">
+    <!-- Bouton de recherche -->
+    <button id="buttonSearch2" class="buttonSearch">Rechercher</button>
+  </div>
+  <!-- Carte pour afficher les informations du film -->
+  <div id="infos2" class="card-container"></div>
+  <!-- Icône de fermeture -->
+  <i class="close bi bi-x" id="close2"></i>
+</div>
+
+
+
+    <!-- click 3-->
+    <div class="click3">
+      <div class="search-container">
+        <label for="search"></label>
+        <!-- Champ de saisie pour la recherche -->
+        <input id="searchBar" name="search" class="searchBar" type="text" placeholder="Rechercher un film">
+        <!-- Bouton de recherche -->
+        <button id="buttonSearch"> Rechercher</button>
+      </div>
+      <!-- Carte pour afficher les informations du film -->
+      <div id="infos" class="card-container">
+        <div class="card"></div>
+      </div> 
+      <!-- Icône de fermeture -->
+      <i class="close bi bi-x"></i>
+    </div>
+
+
+
+    <!-- click 4-->
+    <div class="click4">
       <div class="search-container">
         <label for="search"></label>
         <!-- Champ de saisie pour la recherche -->
@@ -60,10 +113,10 @@
       <hr>
       <!-- Conteneur pour afficher les films favoris -->
       <div class="favgames-container">
-        <div class="games"> <i class="bi bi-plus-lg"></i></div>
-        <div class="games "> <i class="bi bi-plus-lg"></i></div>
-        <div class="games"> <i class="bi bi-plus-lg"></i></div>
-        <div class="games"> <i class="bi bi-plus-lg"></i></div>
+        <div class="movies" id="movies1"> <i class="bi bi-plus-lg" id="plus1"></i></div>
+        <div class="movies" id="movies2"> <i class="bi bi-plus-lg" id="plus2"></i></div>
+        <div class="movies" id="movies3"> <i class="bi bi-plus-lg" id="plus3" ></i></div>
+        <div class="movies" id="movies4"> <i class="bi bi-plus-lg" id="plus4"></i></div>
       </div>
 
       <!-- Email -->

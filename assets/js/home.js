@@ -11,63 +11,28 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', optio
 .then(data => {
     console.log(data.results);
     // Sélection de l'élément HTML où vous souhaitez afficher les cartes
-//     const carousellUpcoming = document.getElementById("carousell-pcoming");
 
-//     // Boucle à travers les résultats pour créer des cartes d'images pour chaque film
-//     for (let i = 0; i < data.results.length; i++) {
-//         const upcoming = data.results[i];
-//         const card = document.createElement("div");
-//         card.classList.add("card");
-//         // Création de la balise img avec le chemin de l'affiche du film.
-//         card.innerHTML = `
-//             <img class="imageMovie" src="https://image.tmdb.org/t/p/original/${upcoming.poster_path}" alt="${upcoming.title}">
-//             <div class="overlayF">
-//                 <p class="movieTitle">${upcoming.title}</p>
-//             </div>
-//         </div>
-//         `;
-//         // Ajout d'un écouteur d'événements pour rediriger vers la page du film lorsque la carte est cliquée.
-//         card.addEventListener('click', () => {
-//             window.location.href = `../controllers/controller-OneMovie.php?id=${upcoming.id}`;
-//         });
-//         // Ajout de la carte à l'élément HTML approprié.
-//         carousellUpcoming.appendChild(card);
-//     }
-// })
-// .catch(error => {
-//     console.error('Error fetching data:', error);
- });
-
- fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
-.then(res => res.json())
-.then(data => {
-
- class carousel {
-
-    /**
-     * 
-     * @param {HTMLElement} element 
-     * @param {Object} options 
-     * @param {Object} options.slidesToScroll - Nombres d'éléments à faire défiler
-     * @param {Object}  options.slidesToScroll - Nombres d'éléments visible 
-     */
-
-    constructor(element, options = {}) {
-        this.element = element;
-        this.options = Object.assign({}, {
-            slidesToScroll: 1,
-            slidesVisible : 1,
-        }, options);
+    // Boucle à travers les résultats pour créer des cartes d'images pour chaque film
+    for (let i = 0; i < data.results.length; i++) {
+        const upcoming = data.results[i];
+        const card = document.createElement("div");
+        card.classList.add("card");
+        // Création de la balise img avec le chemin de l'affiche du film.
+        card.innerHTML = `
+            <img class="imageMovie" src="https://image.tmdb.org/t/p/original/${upcoming.poster_path}" alt="${upcoming.title}">
+            <div class="overlayF">
+                <p class="movieTitle">${upcoming.title}</p>
+            </div>
+        </div>
+        `;
+        // Ajout d'un écouteur d'événements pour rediriger vers la page du film lorsque la carte est cliquée.
+        card.addEventListener('click', () => {
+            window.location.href = `../controllers/controller-OneMovie.php?id=${upcoming.id}`;
+        });
+        // Ajout de la carte à l'élément HTML approprié.
+        infos.appendChild(card);
     }
- }
-
-document.addEventListener('DOMContentLoaded', () =>{
-    console.log(data.results);
-    new carousel (document.querySelector(".carouselUpcoming"), {
-        slidesToScroll: 20,
-        slidesVisible: 4,
-    })   
-
 })
-
-});
+.catch(error => {
+    console.error('Error fetching data:', error);
+ });
