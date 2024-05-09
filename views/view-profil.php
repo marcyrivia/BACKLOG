@@ -22,20 +22,23 @@
         <h2 class="pseudoP"> <?= $user_pseudo ?> </h2>
       <a class="btnLink" href="../controllers/controller-updateprofil.php"><button class="btnEdit" role="button"> Modifier le profil </button></a>
     </div>
-    <div class="navbarP">
-        <ul>
-            <li>Profil</li>
-            <li>Films</li>
-        </ul>
-    </div>
+
     <div class="profil-container">
       <div class="desc-container">
         <span class="desc">Description</span>
         <span class="descrP"><?= $user_descr ?></span>
     
       </div>
-      <div class="favgames-container">
+      <div class="favMovies-container">
         <h2 class="favmovietext">Vos films favoris</h2>
+        <hr>
+        <div class="containerDiv">
+           <div class="movie-container" id="movie1" > <?= $fav_movie_1 ?> </div>
+           <div class="movie-container" id="movie2" ></div>
+           <div class="movie-container" id="movie3" ></div>
+           <div class="movie-container" id="movie4" ></div>
+        </div>
+       
       </div>
     </div>
 

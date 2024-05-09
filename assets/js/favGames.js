@@ -147,6 +147,150 @@ button2.addEventListener("click", function () {
 
 
 
+let movie3 = document.querySelector("#movies3");
+
+
+movie3.addEventListener("click", function () {
+  let click3 = document.querySelector(".click3");
+  let plusI3 = document.querySelector("#plus3");
+  click3.style.display = "flex";
+  plusI3.style.display="none";
+});
+
+window.addEventListener("click", function (event) {
+  let close3 = document.querySelector("#close3");
+  let click3 = document.querySelector(".click3");
+  if (event.target === close3) {
+    click3.style.display = "none";
+    plusI3.style.display= "flex";
+  }
+});
+
+let button3 = document.querySelector("#buttonSearch3");
+button3.addEventListener("click", function () {
+  const infos3 = document.querySelector("#infos3");
+  infos3.innerHTML = "";
+  let movieSearch3 = document.querySelector("#searchBar3").value;
+  fetch(
+    `https://api.themoviedb.org/3/search/movie?query=${movieSearch3}&include_adult=false&language=fr-FR&page=1`,
+    options
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      for (const movie of data.results) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.setAttribute("data-movie-id", movie.id);
+        card.innerHTML = `
+          <div class="imageContainer">
+              <img class="imageMovie" src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="${movie.title}">
+              <div class="overlayF">
+                  <p class="movieTitle">${movie.title}</p>
+              </div>
+          </div>
+        `;
+        // Fermez la fonction de gestionnaire d'événements pour le clic sur la carte
+        card.addEventListener("click", () => {
+          const movieId = card.getAttribute("data-movie-id");
+          fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
+            .then((res) => res.json())
+            .then((data) => {
+              const movie3 = document.querySelector("#movies3");
+              const movieImage = document.createElement("img");
+              movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
+              movieImage.alt = data.title;
+              movieImage.classList.add("movie-poster");
+              movie3.innerHTML = "";
+              movie3.appendChild(movieImage);
+            })
+            .catch((error) => {
+              console.error("Erreur lors de la récupération des données :", error);
+            });
+        }); // Fermez la fonction de gestionnaire d'événements pour le clic sur la carte
+        infos3.appendChild(card);
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la récupération des données de recherche de films :", error);
+    });
+}); // Fermez la fonction de gestionnaire d'événements pour le clic sur le bouton
+
+
+
+
+let movie4 = document.querySelector("#movies4");
+
+
+movie4.addEventListener("click", function () {
+  let click4 = document.querySelector(".click4");
+  let plusI4 = document.querySelector("#plus4");
+  click4.style.display = "flex";
+  plusI4.style.display="none";
+});
+
+window.addEventListener("click", function (event) {
+  let close4 = document.querySelector("#close4");
+  let click4 = document.querySelector(".click4");
+  if (event.target === close4) {
+    click4.style.display = "none";
+    plusI4.style.display= "flex";
+  }
+});
+
+let button4 = document.querySelector("#buttonSearch4");
+button4.addEventListener("click", function () {
+  const infos4 = document.querySelector("#infos4");
+  infos4.innerHTML = "";
+  let movieSearch4 = document.querySelector("#searchBar4").value;
+  fetch(
+    `https://api.themoviedb.org/3/search/movie?query=${movieSearch4}&include_adult=false&language=fr-FR&page=1`,
+    options
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      for (const movie of data.results) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.setAttribute("data-movie-id", movie.id);
+        card.innerHTML = `
+          <div class="imageContainer">
+              <img class="imageMovie" src="https://image.tmdb.org/t/p/original/${movie.poster_path}" alt="${movie.title}">
+              <div class="overlayF">
+                  <p class="movieTitle">${movie.title}</p>
+              </div>
+          </div>
+        `;
+        // Fermez la fonction de gestionnaire d'événements pour le clic sur la carte
+        card.addEventListener("click", () => {
+          const movieId = card.getAttribute("data-movie-id");
+          fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
+            .then((res) => res.json())
+            .then((data) => {
+              const movie4 = document.querySelector("#movies4");
+              const movieImage = document.createElement("img");
+              movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
+              movieImage.alt = data.title;
+              movieImage.classList.add("movie-poster");
+              movieImage.setAttribute("data-name", "movie4");
+              movie4.innerHTML = "";
+              movie4.appendChild(movieImage);
+            })
+            .catch((error) => {
+              console.error("Erreur lors de la récupération des données :", error);
+            });
+        }); // Fermez la fonction de gestionnaire d'événements pour le clic sur la carte
+        infos4.appendChild(card);
+      }
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la récupération des données de recherche de films :", error);
+    });
+}); // Fermez la fonction de gestionnaire d'événements pour le clic sur le bouton
+
+
+
+
+
 // let gamesDivs = document.querySelectorAll(".games");
 // // let close = document.querySelector('.close');
 

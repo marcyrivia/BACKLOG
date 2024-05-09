@@ -41,9 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors["user_email"] = "Le format de l'adresse email n'est pas valide";
   } else if (User::checkEmail($_POST["user_email"]) && $_POST["user_email"] != $_SESSION["user"]["user_email"]) {
     $errors["user_email"] = 'Adresse mail déjà utilisé';
-    var_dump("ok");
   }
   
+  
+  // Contrôle de l'email 
+if (empty($_POST["fav_movie_1"])) {
+}
+
+
+
   if ($_FILES["user_picture"]['error'] == 0) {
 
 
@@ -102,12 +108,13 @@ $user_id = $_SESSION["user"]["user_id"];
 $user_pseudo = $_POST["user_pseudo"];
 $user_email = $_POST["user_email"];
 $user_descr = $_POST["user_descr"];
+$fav_movie_1 = $_POST["fav_movie_1"];
 //  $user_picture = $_FILES["user_picture"];
 
 
 // Mettez à jour le profil
 
-User::modifier($user_id, $user_pseudo, $user_email, $user_picture, $user_descr);
+User::modifier($user_id, $user_pseudo, $user_email, $user_picture, $user_descr, $fav_movie_1);
 
 $_SESSION["user"] = User::getAll($user_pseudo);
 header("Location: controller-profil.php");

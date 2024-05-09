@@ -49,18 +49,18 @@
     <!-- click 3-->
     <div class="click3">
       <div class="search-container">
-        <label for="search"></label>
+        <label for="search3"></label>
         <!-- Champ de saisie pour la recherche -->
-        <input id="searchBar" name="search" class="searchBar" type="text" placeholder="Rechercher un film">
+        <input id="searchBar3" name="search" class="searchBar" type="text" placeholder="Rechercher un film">
         <!-- Bouton de recherche -->
-        <button id="buttonSearch"> Rechercher</button>
+        <button id="buttonSearch3" class="buttonSearch"> Rechercher</button>
       </div>
       <!-- Carte pour afficher les informations du film -->
-      <div id="infos" class="card-container">
+      <div id="infos3" class="card-container">
         <div class="card"></div>
       </div> 
       <!-- Icône de fermeture -->
-      <i class="close bi bi-x"></i>
+      <i class="close bi bi-x" id="close3"></i>
     </div>
 
 
@@ -68,18 +68,18 @@
     <!-- click 4-->
     <div class="click4">
       <div class="search-container">
-        <label for="search"></label>
+        <label for="search4"></label>
         <!-- Champ de saisie pour la recherche -->
-        <input id="searchBar" name="search" class="searchBar" type="text" placeholder="Rechercher un film">
+        <input id="searchBar4" name="search4" class="searchBar" type="text" placeholder="Rechercher un film">
         <!-- Bouton de recherche -->
-        <button id="buttonSearch"> Rechercher</button>
+        <button id="buttonSearch4" class="buttonSearch"> Rechercher</button>
       </div>
       <!-- Carte pour afficher les informations du film -->
-      <div id="infos" class="card-container">
+      <div id="infos4" class="card-container">
         <div class="card"></div>
       </div> 
       <!-- Icône de fermeture -->
-      <i class="close bi bi-x"></i>
+      <i class="close bi bi-x" id="close4"></i>
     </div>
 
 
@@ -113,7 +113,7 @@
       <hr>
       <!-- Conteneur pour afficher les films favoris -->
       <div class="favgames-container">
-        <div class="movies" id="movies1"> <i class="bi bi-plus-lg" id="plus1"></i></div>
+        <div class="movies" id="movies1" name="fav_movie_1"> <i class="bi bi-plus-lg" id="plus1"></i></div>
         <div class="movies" id="movies2"> <i class="bi bi-plus-lg" id="plus2"></i></div>
         <div class="movies" id="movies3"> <i class="bi bi-plus-lg" id="plus3" ></i></div>
         <div class="movies" id="movies4"> <i class="bi bi-plus-lg" id="plus4"></i></div>
