@@ -11,7 +11,7 @@ if (isset($_SESSION['user'])) {
     $user_pseudo = $_SESSION['user']['user_pseudo'];
     $user_email = $_SESSION['user']['user_email'];
     $user_descr = $_SESSION['user']['user_descr'];
-    $fav_movie_1 = $_POST["fav_movie_1"];
+    $fav_movie_1 = $_SESSION["user"]["fav_movie_1"];
 
 }
 

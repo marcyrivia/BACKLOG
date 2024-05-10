@@ -44,10 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   
-  // Contrôle de l'email 
-if (empty($_POST["fav_movie_1"])) {
-}
-
+  
 
 
   if ($_FILES["user_picture"]['error'] == 0) {
@@ -120,6 +117,8 @@ $_SESSION["user"] = User::getAll($user_pseudo);
 header("Location: controller-profil.php");
 exit();
 }
+
+
 
 
 include_once("../views/view-updateprofil.php");

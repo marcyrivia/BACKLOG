@@ -24,13 +24,13 @@
            } ?>
            </span>
            <label for="user_password">Mot de passe:</label><br>
-           <input type="password" id="password" name="user_password"
+           <input type="password" id="password" name="user_password" placeholder="entrez un mot de passe"
            value="<?= isset($_POST['passsword']) ? htmlspecialchars($_POST['user_password']) : '' ?>">
            <span class="error">
            <?php if (isset($errors['user_password'])) {
                echo $errors['user_password'];
            } ?>
-           </span><br><br>
+           </span>
 
            <label for="confirm_password">Confirmer le mot de passe:</label><br>
            <input type="password" id="confirm_password" name="confirm_password"
@@ -40,7 +40,10 @@
              echo $errors['confirm_password'];
            } ?>
           </span><br><br>
-          <input type="submit" value="S'enregistrer">
+          <div class="submit-container">
+            <input type="submit" value="S'enregistrer">
+          </div>
+          
        </form>
     </div>
     <div class="signin-container">
