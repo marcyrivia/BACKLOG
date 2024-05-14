@@ -8,14 +8,19 @@ const options = {
   };
 
 
-  let movie1 = document.querySelector("#movie1");
-  let movie2 = document.querySelector("#movie2");
-let movies3 = document.querySelector("#movie3");
-let movies4 = document.querySelector("#movie4");
+let movie1 = document.querySelector("#movie1");
+let movie2 = document.querySelector("#movie2");
+let movie3 = document.querySelector("#movie3");
+let movie4 = document.querySelector("#movie4");
 
 
 // Assurez-vous d'avoir récupéré l'ID du film correctement
-const movieId = movie1.getAttribute("data-movie-id");
+
+
+
+
+// Utilisation de l'ID du film pour obtenir les données du film depuis l'API
+const movieId = movie1.getAttribute("value");
 
 // Utilisation de l'ID du film pour obtenir les données du film depuis l'API
 fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
@@ -27,12 +32,78 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
     movieImage.alt = data.title;
     movieImage.classList.add("movie-poster");
 
-    // Ajout de l'image à la div #movies1
+    // Ajout de l'image à la div #movie1
     movie1.innerHTML = ""; // Vide d'abord le contenu existant de la div
     movie1.appendChild(movieImage);
 
-    console.log("ok");
+   
   })
   .catch((error) => {
     console.error("Erreur lors de la récupération des données :", error);
   });
+
+  const movieId2 = movie2.getAttribute("value");
+
+// Utilisation de l'ID du film pour obtenir les données du film depuis l'API
+fetch(`https://api.themoviedb.org/3/movie/${movieId2}?language=fr-FR`, options)
+  .then((res) => res.json())
+  .then((data) => {
+    // Création d'un élément image pour afficher l'affiche du film
+    const movieImage = document.createElement("img");
+    movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
+    movieImage.alt = data.title;
+    movieImage.classList.add("movie-poster");
+
+    // Ajout de l'image à la div #movie1
+    movie2.innerHTML = ""; // Vide d'abord le contenu existant de la div
+    movie2.appendChild(movieImage);
+
+   
+  })
+  .catch((error) => {
+    console.error("Erreur lors de la récupération des données :", error);
+  });
+
+  const movieId3 = movie3.getAttribute("value");
+
+  // Utilisation de l'ID du film pour obtenir les données du film depuis l'API
+  fetch(`https://api.themoviedb.org/3/movie/${movieId3}?language=fr-FR`, options)
+    .then((res) => res.json())
+    .then((data) => {
+      // Création d'un élément image pour afficher l'affiche du film
+      const movieImage = document.createElement("img");
+      movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
+      movieImage.alt = data.title;
+      movieImage.classList.add("movie-poster");
+  
+      // Ajout de l'image à la div #movie1
+      movie3.innerHTML = ""; // Vide d'abord le contenu existant de la div
+      movie3.appendChild(movieImage);
+  
+     
+    })
+    .catch((error) => {
+      console.error("Erreur lors de la récupération des données :", error);
+    });
+
+    const movieId4 = movie4.getAttribute("value");
+
+    // Utilisation de l'ID du film pour obtenir les données du film depuis l'API
+    fetch(`https://api.themoviedb.org/3/movie/${movieId4}?language=fr-FR`, options)
+      .then((res) => res.json())
+      .then((data) => {
+        // Création d'un élément image pour afficher l'affiche du film
+        const movieImage = document.createElement("img");
+        movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
+        movieImage.alt = data.title;
+        movieImage.classList.add("movie-poster");
+    
+        // Ajout de l'image à la div #movie1
+        movie4.innerHTML = ""; // Vide d'abord le contenu existant de la div
+        movie4.appendChild(movieImage);
+    
+       
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération des données :", error);
+      });

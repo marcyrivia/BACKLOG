@@ -114,14 +114,14 @@
       <!-- Conteneur pour afficher les films favoris -->
 
       <div class="favgames-container">
-        <div class="movies" id="movies1"> <i class="bi bi-plus-lg" id="plus1"></i></div>
+        <div class="movies" id="movies1"> <i class="bi bi-plus-lg" id="plus1" value="<?= $_SESSION['user']['fav_movie_1'] ?>"></i></div>
         <div class="movies" id="movies2"> <i class="bi bi-plus-lg" id="plus2"></i></div>
         <div class="movies" id="movies3"> <i class="bi bi-plus-lg" id="plus3" ></i></div>
         <div class="movies" id="movies4"> <i class="bi bi-plus-lg" id="plus4"></i></div>
-        <input type="hidden" id="input1" name="fav_movie_1" value="">
-        <input type="hidden" id="input2" name="fav_movie_2" value="">
-        <input type="hidden" id="input13"name="fav_movie_3" value="">
-        <input type="hidden" id="input4" name="fav_movie_4" value="">
+        <input type="hidden" id="input1" name="fav_movie_1" value="<?= $_SESSION['user']['fav_movie_1']  ?>">
+        <input type="hidden" id="input2" name="fav_movie_2" value="<?= $_SESSION['user']['fav_movie_2']  ?>">
+        <input type="hidden" id="input3"name="fav_movie_3" value="<?= $_SESSION['user']['fav_movie_3']  ?>">
+        <input type="hidden" id="input4" name="fav_movie_4" value="<?= $_SESSION['user']['fav_movie_4']  ?>">
       </div>
  
 

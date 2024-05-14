@@ -175,14 +175,14 @@ class User
             die();
         }
     } 
-    public static function modifier(int $user_id, string $user_pseudo, string $user_email, string $user_picture, string $user_descr, string $fav_movie_1)
+    public static function modifier(int $user_id, string $user_pseudo, string $user_email, string $user_picture, string $user_descr, string $fav_movie_1, string $fav_movie_2, string $fav_movie_3, string $fav_movie_4)
     {
         try {
             // Création d'un objet $db selon la classe PDO
             $db = new PDO("mysql:host=localhost;dbname=" . DB_NAME, DB_USER, DB_PASS);
     
             // stockage de ma requete dans une variable
-            $sql = "UPDATE `userprofil` SET  `user_pseudo` = :user_pseudo, `user_email` = :user_email, `user_picture` = :user_picture,  `user_descr` = :user_descr,  `fav_movie_1` = :fav_movie_1 WHERE `user_id` = :user_id";
+            $sql = "UPDATE `userprofil` SET  `user_pseudo` = :user_pseudo, `user_email` = :user_email, `user_picture` = :user_picture,  `user_descr` = :user_descr,  `fav_movie_1` = :fav_movie_1, `fav_movie_2` = :fav_movie_2, `fav_movie_3` = :fav_movie_3, `fav_movie_4` = :fav_movie_4 WHERE `user_id` = :user_id";
     
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);
@@ -195,6 +195,10 @@ class User
             $query->bindValue(':user_picture', htmlspecialchars($user_picture), PDO::PARAM_STR);
             $query->bindValue(':user_descr', htmlspecialchars($user_descr), PDO::PARAM_STR);
             $query->bindValue(':fav_movie_1', $fav_movie_1, PDO::PARAM_INT);
+            $query->bindValue(':fav_movie_2', $fav_movie_2, PDO::PARAM_INT);
+            $query->bindValue(':fav_movie_3', $fav_movie_3, PDO::PARAM_INT);
+            $query->bindValue(':fav_movie_4', $fav_movie_4, PDO::PARAM_INT);
+            
                 
     
             // on execute la requête

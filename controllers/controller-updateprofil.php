@@ -8,6 +8,10 @@ session_start();
 if (isset($_SESSION['user'])) {
   $user_id = $_SESSION['user']['user_id'];
   $user_picture = $_SESSION['user']['user_picture'];
+  $fav_movie_1 = $_SESSION["user"]["fav_movie_1"];
+  $fav_movie_2 = $_SESSION["user"]["fav_movie_2"];
+  $fav_movie_3 = $_SESSION["user"]["fav_movie_3"];
+  $fav_movie_4 = $_SESSION["user"]["fav_movie_4"];
 
 
 }
@@ -106,12 +110,15 @@ $user_pseudo = $_POST["user_pseudo"];
 $user_email = $_POST["user_email"];
 $user_descr = $_POST["user_descr"];
 $fav_movie_1 = $_POST["fav_movie_1"];
+$fav_movie_2 = $_POST["fav_movie_2"];
+$fav_movie_3 = $_POST["fav_movie_3"];
+$fav_movie_4 = $_POST["fav_movie_4"];
 //  $user_picture = $_FILES["user_picture"];
 
 
 // Mettez à jour le profil
 var_dump($_POST);
-User::modifier($user_id, $user_pseudo, $user_email, $user_picture, $user_descr, $fav_movie_1);
+User::modifier($user_id, $user_pseudo, $user_email, $user_picture, $user_descr, $fav_movie_1, $fav_movie_2, $fav_movie_3, $fav_movie_4);
 
 $_SESSION["user"] = User::getAll($user_pseudo);
 header("Location: controller-profil.php");

@@ -12,6 +12,9 @@ if (isset($_SESSION['user'])) {
     $user_email = $_SESSION['user']['user_email'];
     $user_descr = $_SESSION['user']['user_descr'];
     $fav_movie_1 = $_SESSION["user"]["fav_movie_1"];
+    $fav_movie_2 = $_SESSION["user"]["fav_movie_2"];
+    $fav_movie_3 = $_SESSION["user"]["fav_movie_3"];
+    $fav_movie_4 = $_SESSION["user"]["fav_movie_4"];
 
 }
 

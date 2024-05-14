@@ -158,3 +158,16 @@ hr {
 .movie-container:hover{
   transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+
+.movie-poster{
+  background-color: #3d3838;
+  border-radius: 5px;
+  border: #35509c 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s; /* Animation */
+  height: 20rem;
+  width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

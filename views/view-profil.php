@@ -33,10 +33,10 @@
         <h2 class="favmovietext">Vos films favoris</h2>
         <hr>
         <div class="containerDiv">
-           <div class="movie-container" id="movie1" > <?= $fav_movie_1 ?> </div>
-           <div class="movie-container" id="movie2" ></div>
-           <div class="movie-container" id="movie3" ></div>
-           <div class="movie-container" id="movie4" ></div>
+           <div class="movie-container" id="movie1" value="<?= $fav_movie_1 ?>">  </div>
+           <div class="movie-container" id="movie2" value="<?= $fav_movie_2 ?>"></div>
+           <div class="movie-container" id="movie3" value="<?= $fav_movie_3 ?>"></div>
+           <div class="movie-container" id="movie4" value="<?= $fav_movie_4 ?>"></div>
         </div>
        
       </div>

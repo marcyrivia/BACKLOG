@@ -126,6 +126,7 @@ button2.addEventListener("click", function () {
           fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
             .then((res) => res.json())
             .then((data) => {
+              const input2 = document.querySelector("#input2")
               const movie2 = document.querySelector("#movies2");
               const movieImage = document.createElement("img");
               movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
@@ -133,6 +134,8 @@ button2.addEventListener("click", function () {
               movieImage.classList.add("movie-poster");
               movie2.innerHTML = "";
               movie2.appendChild(movieImage);
+              input2.value = movieId; // Insérer l'ID du film dans la valeur de l'input
+              console.log(input2.value);
             })
             .catch((error) => {
               console.error("Erreur lors de la récupération des données :", error);
@@ -199,6 +202,7 @@ button3.addEventListener("click", function () {
           fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
             .then((res) => res.json())
             .then((data) => {
+              const input3 = document.querySelector("#input3");
               const movie3 = document.querySelector("#movies3");
               const movieImage = document.createElement("img");
               movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
@@ -206,6 +210,9 @@ button3.addEventListener("click", function () {
               movieImage.classList.add("movie-poster");
               movie3.innerHTML = "";
               movie3.appendChild(movieImage);
+              input3.value = movieId; // Insérer l'ID du film dans la valeur de l'input
+              console.log(input3.value);
+
             })
             .catch((error) => {
               console.error("Erreur lors de la récupération des données :", error);
@@ -270,6 +277,7 @@ button4.addEventListener("click", function () {
           fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
             .then((res) => res.json())
             .then((data) => {
+              const input4 = document.querySelector("#input4");
               const movie4 = document.querySelector("#movies4");
               const movieImage = document.createElement("img");
               movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
@@ -278,6 +286,9 @@ button4.addEventListener("click", function () {
               movieImage.setAttribute("data-name", "movie4");
               movie4.innerHTML = "";
               movie4.appendChild(movieImage);
+              input4.value = movieId; // Insérer l'ID du film dans la valeur de l'input
+              console.log(input4.value);
+
             })
             .catch((error) => {
               console.error("Erreur lors de la récupération des données :", error);
