@@ -14,6 +14,7 @@ stars.forEach((star, index) => {
 
     // Affiche l'index de l'étoile cliquée dans la console
     console.log(index + 1);
+    fetch("../controllers/controller-rating.php?rating=" + (index+1));
 
 
     // Met à jour visuellement les étoiles en fonction de l'étoile cliquée

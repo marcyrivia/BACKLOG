@@ -47,6 +47,8 @@ button1.addEventListener("click", function () {
               </div>
           </div>
         `;
+
+
         card.addEventListener("click", () => {
           const movieId = card.getAttribute("data-movie-id");
           fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
@@ -272,6 +274,7 @@ button4.addEventListener("click", function () {
           </div>
         `;
         // Fermez la fonction de gestionnaire d'événements pour le clic sur la carte
+        
         card.addEventListener("click", () => {
           const movieId = card.getAttribute("data-movie-id");
           fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)

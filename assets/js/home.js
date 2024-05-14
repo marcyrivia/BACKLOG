@@ -6,7 +6,7 @@ const options = {
     }
 };
 
-fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
+fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1', options)
 .then(res => res.json())
 .then(data => {
     console.log(data.results);
