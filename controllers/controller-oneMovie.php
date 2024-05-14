@@ -6,6 +6,11 @@ session_start();
 // var_dump($_SESSION);
 // Assurez-vous que la classe Rating est incluse dans votre fichier PHP
 
+
+    // $date = date('d F Y');
+
+ 
+
 // Vérifie si la valeur de Note_score a été envoyée via POST
 if(isset($_GET['rating'])) {
     // Récupère la valeur de Note_score

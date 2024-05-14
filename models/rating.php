@@ -39,4 +39,29 @@ class Rating {
       }
 
      }
+
+     public static function GetMovies(int $movie_id, string $movie_name, string $movie_release, string $movie_synopsis ){
+
+        // Création de l'objet PDO pour la connexion à la base de données
+        $db = new PDO("mysql:host=localhost;dbname=" . DB_NAME, DB_USER, DB_PASS);
+        // Paramétrage des erreurs PDO pour les afficher en cas de problème
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Requête SQL d'insertion des données dans la table userprofil
+        $sql = "INSERT INTO `note`(`movie_id`, `movie_name`, `movie_release`, `movie_synopsis` ) VALUES (:user_id, :movie_name, :movie_release, :movie_synopsis)";
+
+        // Préparation de la requête
+        $query = $db->prepare($sql);
+
+        // Liaison des valeurs avec les paramètres de la requête
+        $query->bindValue(':user_id', $movie_id, PDO::PARAM_INT);
+        $query->bindValue(':Note_score', htmlspecialchars($movie_name), PDO::PARAM_STR);
+        $query->bindValue(':Note_score', htmlspecialchars($movie_release), PDO::PARAM_STR);
+        $query->bindValue(':Note_score', htmlspecialchars($movie_synopsis), PDO::PARAM_STR);
+       
+
+        // Exécution de la requête
+        $query->execute();
+
+     }
 }

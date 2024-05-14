@@ -50,15 +50,7 @@
        <?php include_once '../assets/footer.php' ?> 
 <!-- FIN FOOTER -->
 
-    <script>
-      // SCRIPT HEADER
-      hamburger = document.querySelector('.menu-burger');
-      hamburger.onclick = function(){
-        navBar = document.querySelector(".navbar")
-        navBar.classList.toggle("active");
-      }
-      // FIN SCRIPT HEADER
-    </script>
+<script src="../assets/js/profil.js"></script>
     
 </body>
 </html>

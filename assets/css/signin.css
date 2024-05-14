@@ -22,7 +22,7 @@ body {
 }
 
 .connect-container {
-    background-color: #fff; /* Fond blanc pour le conteneur du formulaire */
+    background-color: #201e1e; /* Fond blanc pour le conteneur du formulaire */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
@@ -35,12 +35,17 @@ body {
 }
 
 .user_pseudo, .user_password {
-    padding: 10px;
-    margin-bottom: 20px; /* Espacement entre les champs de saisie */
-    border: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    text-align: center;
+    color: #fefefe;
+    background-color: #292626;
+    border: none;
     border-radius: 5px;
-    font-size: 16px;
-    width: 100%; /* Largeur maximale pour s'adapter au conteneur */
+    border-bottom: #35509c solid 2px;
+    height: 3vh;
+    text-size-adjust: 3vh;
 }
 
 .connexion {

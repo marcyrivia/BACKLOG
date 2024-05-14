@@ -175,7 +175,7 @@ class User
             die();
         }
     } 
-    public static function modifier(int $user_id, string $user_pseudo, string $user_email, string $user_picture, string $user_descr, $fav_movie_1)
+    public static function modifier(int $user_id, string $user_pseudo, string $user_email, string $user_picture, string $user_descr, string $fav_movie_1)
     {
         try {
             // Création d'un objet $db selon la classe PDO
@@ -186,6 +186,7 @@ class User
     
             // je prepare ma requête pour éviter les injections SQL
             $query = $db->prepare($sql);
+            var_dump($fav_movie_1);
     
             // on relie les paramètres à nos marqueurs nominatifs à l'aide d'un bindValue
             $query->bindValue(':user_id', $user_id, PDO::PARAM_INT);
@@ -193,7 +194,7 @@ class User
             $query->bindValue(':user_email', htmlspecialchars($user_email), PDO::PARAM_STR);
             $query->bindValue(':user_picture', htmlspecialchars($user_picture), PDO::PARAM_STR);
             $query->bindValue(':user_descr', htmlspecialchars($user_descr), PDO::PARAM_STR);
-            $query->bindValue(':fav_movie_1', htmlspecialchars($fav_movie_1), PDO::PARAM_STR);
+            $query->bindValue(':fav_movie_1', $fav_movie_1, PDO::PARAM_INT);
                 
     
             // on execute la requête

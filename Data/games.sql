@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 13 mai 2024 à 08:40
+-- Généré le : mar. 14 mai 2024 à 11:25
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -100,7 +100,7 @@ CREATE TABLE `movie` (
   `movie_id` int NOT NULL,
   `movie_name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `movie_release` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `movie_sys` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `movie_synopsis` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `studio_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -154,7 +154,17 @@ INSERT INTO `note` (`Note_id`, `Note_score`, `user_id`) VALUES
 (31, '2', 1),
 (32, '3', 1),
 (33, '3', 1),
-(34, '3', 1);
+(34, '3', 1),
+(35, '4', 1),
+(36, '1', 1),
+(37, '5', 1),
+(38, '3', 1),
+(39, '4!', 1),
+(40, '4!', 1),
+(41, '4!', 1),
+(42, '4!', 1),
+(43, '5', 1),
+(44, '5', 1);
 
 -- --------------------------------------------------------
 
@@ -217,15 +227,20 @@ CREATE TABLE `userprofil` (
   `user_password` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `user_descr` varchar(255) DEFAULT NULL,
   `user_picture` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT 'default.png',
-  `fav_movie_1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
+  `fav_movie_1` int DEFAULT NULL,
+  `fav_movie_2` int DEFAULT NULL,
+  `fav_movie_3` int DEFAULT NULL,
+  `fav_movie_4` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `userprofil`
 --
 
-INSERT INTO `userprofil` (`user_id`, `user_validate`, `user_pseudo`, `user_email`, `user_password`, `user_descr`, `user_picture`, `fav_movie_1`) VALUES
-(1, 1, 'testAccount', 'azaezae@gmail.com', '$2y$10$BeXs/7Uv/fYWcwZHZAUoJ.ICDGxNi35Rj47Cx2cfTnloVqyxjb/zS', '               my discvoveries of the year dumbass', 'Avatar_TheLastAirbender_Cartoon_Series_TophBeifong.jpg', '');
+INSERT INTO `userprofil` (`user_id`, `user_validate`, `user_pseudo`, `user_email`, `user_password`, `user_descr`, `user_picture`, `fav_movie_1`, `fav_movie_2`, `fav_movie_3`, `fav_movie_4`) VALUES
+(1, 1, 'Top', 'azaezae@gmail.com', '$2y$10$BeXs/7Uv/fYWcwZHZAUoJ.ICDGxNi35Rj47Cx2cfTnloVqyxjb/zS', '                                             my discvoveries of the year dumbass', 'Avatar_TheLastAirbender_Cartoon_Series_TophBeifong.jpg', 11, NULL, NULL, NULL),
+(2, 1, 'popo', 'popo@gmail.com', '$2y$10$fifCZmmIgW0kq0ro2jbSae/u4Q2gVU99HDM7swzlLTUVaRIgRUFMm', NULL, 'default.png', NULL, NULL, NULL, NULL),
+(3, 1, 'momo', 'momo@gmail.com', '$2y$10$79SuPDioCGRs01x0t75.luBA6OjQnxJ2dhPi6GwM4ahh.e1.IiwFC', NULL, 'default.png', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -385,7 +400,7 @@ ALTER TABLE `movie`
 -- AUTO_INCREMENT pour la table `note`
 --
 ALTER TABLE `note`
-  MODIFY `Note_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `Note_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT pour la table `plateformes`
@@ -409,7 +424,7 @@ ALTER TABLE `studio`
 -- AUTO_INCREMENT pour la table `userprofil`
 --
 ALTER TABLE `userprofil`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
@@ -440,7 +455,7 @@ ALTER TABLE `l_user_a_une_review`
 -- Contraintes pour la table `movie`
 --
 ALTER TABLE `movie`
-  ADD CONSTRAINT `movie_ibfk_1` FOREIGN KEY (`studio_id`) REFERENCES `studio` (`studio_id`);
+  ADD CONSTRAINT `movie_ibfk_1` FOREIGN KEY (`studio_id`) REFERENCES `studio` (`studio_id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `note`

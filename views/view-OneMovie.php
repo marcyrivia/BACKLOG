@@ -20,11 +20,11 @@
 
         <form action="controller-oneMovie.php" method="get">
             <div class="star-container">
-                <i class="stars bi-star-fill"></i>
-                <i class="stars bi-star-fill"></i>
-                <i class="stars bi-star-fill"></i>
-                <i class="stars bi-star-fill"></i>
-                <i class="stars bi-star-fill"></i>
+                <i class="stars bi-star-fill" name="rating" ></i>
+                <i class="stars bi-star-fill" name="rating" ></i>
+                <i class="stars bi-star-fill" name="rating" ></i>
+                <i class="stars bi-star-fill" name="rating" ></i>
+                <i class="stars bi-star-fill" name="rating" ></i>
             </div>
         </form>
       

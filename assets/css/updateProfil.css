@@ -62,6 +62,7 @@ li{
   border-radius: 10px;
   width: 140px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .inputPseudo {
@@ -250,7 +251,7 @@ hr {
 
 .searchBar{
   height: 2rem;
-  width: 60%;
+  width: 50%;
   background-color: #3d3838;
   color: #fefefe;
   font-weight: bolder;
@@ -269,6 +270,8 @@ hr {
   border: #35509c solid 3px;
   border-radius: 5px; 
   width: 8rem;
+  height: 2rem;
+  margin-top: 1rem;
   margin-left: 10px;
 }
 
@@ -278,9 +281,9 @@ hr {
 }
 
 .search-container{
-  width: 60%;
-  height: 20%;
-  
+  width: 100%;
+  height: 10%;
+  display: flex;
 }
 
 
@@ -399,7 +402,6 @@ hr {
 .valid {
   background-color: #35509c;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin-left: 2rem;
   color: #fefefe;
   height: 40px;
   width: 170px;
@@ -449,9 +451,10 @@ hr {
     width:80%;
   }
 
+
   .searchBar{
     height: 2rem;
-    width: 60%;
+    width: 3rem;
     background-color: #3d3838;
     color: #fefefe;
     font-weight: bolder;
@@ -470,6 +473,7 @@ hr {
     border: #35509c solid 3px;
     border-radius: 5px; 
     width: 4rem;
+    height: 5px;
     margin-left: 5px;
   }
   

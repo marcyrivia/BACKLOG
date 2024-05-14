@@ -110,13 +110,15 @@ $fav_movie_1 = $_POST["fav_movie_1"];
 
 
 // Mettez à jour le profil
-
+var_dump($_POST);
 User::modifier($user_id, $user_pseudo, $user_email, $user_picture, $user_descr, $fav_movie_1);
 
 $_SESSION["user"] = User::getAll($user_pseudo);
 header("Location: controller-profil.php");
 exit();
 }
+
+
 
 
 

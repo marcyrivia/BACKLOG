@@ -52,6 +52,7 @@ button1.addEventListener("click", function () {
           fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
             .then((res) => res.json())
             .then((data) => {
+              const input1 = document.querySelector("#input1");
               const movie1 = document.querySelector("#movies1");
               const movieImage = document.createElement("img");
               movieImage.src = `https://image.tmdb.org/t/p/original/${data.poster_path}`;
@@ -59,6 +60,9 @@ button1.addEventListener("click", function () {
               movieImage.classList.add("movie-poster");
               movie1.innerHTML = "";
               movie1.appendChild(movieImage);
+              input1.value = movieId; // Insérer l'ID du film dans la valeur de l'input
+              console.log(input1.value);
+              
             })
             .catch((error) => {
               console.error("Erreur lors de la récupération des données :", error);
