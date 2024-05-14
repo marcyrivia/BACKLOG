@@ -36,6 +36,9 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=fr-FR`, options)
     movie1.innerHTML = ""; // Vide d'abord le contenu existant de la div
     movie1.appendChild(movieImage);
 
+    movie1.addEventListener('click', () => {
+        window.location.href = `../controllers/controller-OneMovie.php?id=${movieId}`;
+    });
    
   })
   .catch((error) => {
@@ -57,7 +60,9 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId2}?language=fr-FR`, options)
     // Ajout de l'image à la div #movie1
     movie2.innerHTML = ""; // Vide d'abord le contenu existant de la div
     movie2.appendChild(movieImage);
-
+    movie2.addEventListener('click', () => {
+        window.location.href = `../controllers/controller-OneMovie.php?id=${movieId2}`;
+    });
    
   })
   .catch((error) => {
@@ -79,7 +84,9 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId2}?language=fr-FR`, options)
       // Ajout de l'image à la div #movie1
       movie3.innerHTML = ""; // Vide d'abord le contenu existant de la div
       movie3.appendChild(movieImage);
-  
+      movie3.addEventListener('click', () => {
+        window.location.href = `../controllers/controller-OneMovie.php?id=${movieId3}`;
+    });
      
     })
     .catch((error) => {
@@ -101,9 +108,13 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId2}?language=fr-FR`, options)
         // Ajout de l'image à la div #movie1
         movie4.innerHTML = ""; // Vide d'abord le contenu existant de la div
         movie4.appendChild(movieImage);
-    
+
+        movie4.addEventListener('click', () => {
+            window.location.href = `../controllers/controller-OneMovie.php?id=${movieId4}`;
+        });
        
       })
+
       .catch((error) => {
         console.error("Erreur lors de la récupération des données :", error);
       });
