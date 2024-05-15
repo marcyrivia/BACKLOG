@@ -37,7 +37,6 @@ latestBtn.addEventListener("click", function () {
 fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
 .then(res => res.json())
 .then(data => {
-    console.log(data.results)
     // Boucle à travers les résultats pour créer des cartes d'images pour chaque film.
     for (let i = 0; i < data.results.length; i++) {
         const latest = data.results[i];
@@ -54,6 +53,27 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', op
         `
         // Ajout d'un écouteur d'événements pour rediriger vers la page du film lorsque la carte est cliquée.
         card.addEventListener('click', () => {
+            const form = document.createElement('form');
+            form.method = 'get';
+            form.action = '../controllers/controller-OneMovie.php';
+            const inputId = document.createElement('input');
+            const inputMovieName = document.createElement('input');
+            inputId.type = 'hidden';
+            inputId.name = 'movie_id';
+            inputId.value = latest.id;
+            console.log(inputId.value);
+
+            inputMovieName.type = 'hidden';
+            inputMovieName.name = 'movie_name';
+            inputMovieName.value = latest.title;
+            console.log(inputMovieName.value);
+
+
+            form.appendChild(inputId);
+            form.appendChild(inputMovieName);
+
+            document.body.appendChild(form);
+            form.submit();
             window.location.href = `../controllers/controller-OneMovie.php?id=${latest.id}`;
         });
         sorties.appendChild(card); // Ajout de la carte à l'élément HTML approprié.
@@ -102,7 +122,6 @@ topRatedBtn.addEventListener("click", function () {
         </div>
     </div>
             `
-            // Ajout d'un écouteur d'événements pour rediriger vers la page du film lorsque la carte est cliquée.
             card.addEventListener('click', () => {
                 window.location.href = `../controllers/controller-OneMovie.php?id=${popularity.id}`;
             });
@@ -119,6 +138,7 @@ buttonSearch.addEventListener("click", function () {
     let affichage = document.querySelector("#topRated");
     affichage.innerHTML = ""
     const infos = document.querySelector("#infos");
+    const form = document.querySelector("form");
     infos.innerHTML = "";
     const options = {
         method: 'GET',
@@ -152,7 +172,7 @@ buttonSearch.addEventListener("click", function () {
                 window.location.href = `../controllers/controller-OneMovie.php?id=${movie.id}`;
             });
             
-            infos.appendChild(card);
+            form.appendChild(card);
         }
     });
     

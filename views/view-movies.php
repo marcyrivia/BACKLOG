@@ -28,9 +28,7 @@
         <div id="latest"></div>
         <div id="topRated"></div>
         <div id="infos" class="card-container">
-            <form action="" method="post">
-                
-            </form>
+
         </div> 
     </div>
     

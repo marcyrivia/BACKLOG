@@ -3,6 +3,8 @@ require_once '../models/rating.php';
 require_once '../config/config.php';
 
 session_start();
+
+var_dump($_GET);
 // var_dump($_SESSION);
 // Assurez-vous que la classe Rating est incluse dans votre fichier PHP
 
@@ -22,6 +24,18 @@ if(isset($_GET['rating'])) {
     // Répond au client avec un message de succès (facultatif)
     // echo "Note insérée avec succès dans la base de données.";
 }
+
+if(isset($_GET['id'])) {
+    $movie_id = $_GET["id"];
+
+    if (Rating::checkIdMovieExists($movie_id)) {
+        echo "Ce film existe déjà.";
+    } else {
+        Rating::addMovie($movie_id);
+    }
+}
+
+
 
 // Contrôleur - Gestion de la logique métier
 

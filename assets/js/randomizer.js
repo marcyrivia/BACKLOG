@@ -36,6 +36,27 @@ randomBtn.addEventListener("click", function (){
         `;
         
         card.addEventListener('click', () => {
+            const form = document.createElement('form');
+            form.method = 'get';
+            form.action = '../controllers/controller-OneMovie.php';
+            const inputId = document.createElement('input');
+            const inputMovieName = document.createElement('input');
+            inputId.type = 'hidden';
+            inputId.name = 'movie_id';
+            inputId.value = randomMovie.id;
+            console.log(inputId.value);
+
+            inputMovieName.type = 'hidden';
+            inputMovieName.name = 'movie_name';
+            inputMovieName.value = randomMovie.title;
+            console.log(inputMovieName.value);
+
+
+            form.appendChild(inputId);
+            form.appendChild(inputMovieName);
+
+            document.body.appendChild(form);
+            form.submit();
             window.location.href = `../controllers/controller-OneMovie.php?id=${randomMovie.id}`;
         });
         

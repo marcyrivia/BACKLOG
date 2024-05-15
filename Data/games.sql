@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mar. 14 mai 2024 à 11:25
+-- Généré le : mer. 15 mai 2024 à 13:30
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -33,17 +33,6 @@ CREATE TABLE `admin` (
   `admin_pseudo` varchar(50) DEFAULT NULL,
   `admin_lastname` varchar(50) DEFAULT NULL,
   `admin_firstname` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `genre`
---
-
-CREATE TABLE `genre` (
-  `genre_id` int NOT NULL,
-  `genre_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -93,6 +82,17 @@ CREATE TABLE `l_user_a_une_review` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `momo`
+--
+
+CREATE TABLE `momo` (
+  `genre_id` int NOT NULL,
+  `genre_name` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `movie`
 --
 
@@ -101,8 +101,24 @@ CREATE TABLE `movie` (
   `movie_name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `movie_release` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `movie_synopsis` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `studio_id` int NOT NULL
+  `studio_id` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `movie`
+--
+
+INSERT INTO `movie` (`movie_id`, `movie_name`, `movie_release`, `movie_synopsis`, `studio_id`) VALUES
+(1, NULL, NULL, NULL, NULL),
+(438631, NULL, NULL, NULL, NULL),
+(634492, NULL, NULL, NULL, NULL),
+(653346, NULL, NULL, NULL, NULL),
+(823464, NULL, NULL, NULL, NULL),
+(1011985, NULL, NULL, NULL, NULL),
+(1062807, NULL, NULL, NULL, NULL),
+(1096197, NULL, NULL, NULL, NULL),
+(1105407, NULL, NULL, NULL, NULL),
+(1219685, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -164,7 +180,13 @@ INSERT INTO `note` (`Note_id`, `Note_score`, `user_id`) VALUES
 (41, '4!', 1),
 (42, '4!', 1),
 (43, '5', 1),
-(44, '5', 1);
+(44, '5', 1),
+(45, '3', 5),
+(46, '3', 5),
+(47, '3', 5),
+(48, '3', 5),
+(49, '4', 5),
+(50, '2', 5);
 
 -- --------------------------------------------------------
 
@@ -238,9 +260,11 @@ CREATE TABLE `userprofil` (
 --
 
 INSERT INTO `userprofil` (`user_id`, `user_validate`, `user_pseudo`, `user_email`, `user_password`, `user_descr`, `user_picture`, `fav_movie_1`, `fav_movie_2`, `fav_movie_3`, `fav_movie_4`) VALUES
-(1, 1, 'Top', 'azaezae@gmail.com', '$2y$10$BeXs/7Uv/fYWcwZHZAUoJ.ICDGxNi35Rj47Cx2cfTnloVqyxjb/zS', '                                             my discvoveries of the year dumbass', 'Avatar_TheLastAirbender_Cartoon_Series_TophBeifong.jpg', 11, NULL, NULL, NULL),
+(1, 1, 'Toph', 'azaezae@gmail.com', '$2y$10$BeXs/7Uv/fYWcwZHZAUoJ.ICDGxNi35Rj47Cx2cfTnloVqyxjb/zS', '                                                              my discvoveries of the year dumbass', 'Avatar_TheLastAirbender_Cartoon_Series_TophBeifong.jpg', 553610, 1893, 685274, 1024621),
 (2, 1, 'popo', 'popo@gmail.com', '$2y$10$fifCZmmIgW0kq0ro2jbSae/u4Q2gVU99HDM7swzlLTUVaRIgRUFMm', NULL, 'default.png', NULL, NULL, NULL, NULL),
-(3, 1, 'momo', 'momo@gmail.com', '$2y$10$79SuPDioCGRs01x0t75.luBA6OjQnxJ2dhPi6GwM4ahh.e1.IiwFC', NULL, 'default.png', NULL, NULL, NULL, NULL);
+(3, 1, 'momo', 'momo@gmail.com', '$2y$10$79SuPDioCGRs01x0t75.luBA6OjQnxJ2dhPi6GwM4ahh.e1.IiwFC', NULL, 'default.png', NULL, NULL, NULL, NULL),
+(4, 1, 'azeaze', 'lolo@gmail.com', '$2y$10$4f6nUkzVyUXs1eleFikUXeHOwXzXn0XsOn729ypxmzq5Ise1KB4UK', NULL, 'default.png', NULL, NULL, NULL, NULL),
+(5, 1, 'toto', 'toto@gmail.com', '$2y$10$qyn8cjCr8nMcwa5tIhh7G.zNACW6Hc3MC9ownaRAM2CHi3V18gQKy', NULL, 'default.png', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -275,12 +299,6 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Index pour la table `genre`
---
-ALTER TABLE `genre`
-  ADD PRIMARY KEY (`genre_id`);
-
---
 -- Index pour la table `jeu_a_une_note`
 --
 ALTER TABLE `jeu_a_une_note`
@@ -306,6 +324,12 @@ ALTER TABLE `list`
 ALTER TABLE `l_user_a_une_review`
   ADD PRIMARY KEY (`user_id`,`review_id`),
   ADD KEY `review_id` (`review_id`);
+
+--
+-- Index pour la table `momo`
+--
+ALTER TABLE `momo`
+  ADD PRIMARY KEY (`genre_id`);
 
 --
 -- Index pour la table `movie`
@@ -379,28 +403,28 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `genre`
---
-ALTER TABLE `genre`
-  MODIFY `genre_id` int NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `list`
 --
 ALTER TABLE `list`
   MODIFY `list_id` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `momo`
+--
+ALTER TABLE `momo`
+  MODIFY `genre_id` int NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `movie_id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `movie_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1219686;
 
 --
 -- AUTO_INCREMENT pour la table `note`
 --
 ALTER TABLE `note`
-  MODIFY `Note_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `Note_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT pour la table `plateformes`
@@ -424,7 +448,7 @@ ALTER TABLE `studio`
 -- AUTO_INCREMENT pour la table `userprofil`
 --
 ALTER TABLE `userprofil`
-  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Contraintes pour les tables déchargées
@@ -442,7 +466,7 @@ ALTER TABLE `jeu_a_une_note`
 --
 ALTER TABLE `le_jeu_a_un_genre`
   ADD CONSTRAINT `le_jeu_a_un_genre_ibfk_1` FOREIGN KEY (`games_id`) REFERENCES `movie` (`movie_id`),
-  ADD CONSTRAINT `le_jeu_a_un_genre_ibfk_2` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`genre_id`);
+  ADD CONSTRAINT `le_jeu_a_un_genre_ibfk_2` FOREIGN KEY (`genre_id`) REFERENCES `momo` (`genre_id`);
 
 --
 -- Contraintes pour la table `l_user_a_une_review`

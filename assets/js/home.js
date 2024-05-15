@@ -27,6 +27,27 @@ fetch('https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1', optio
         `;
         // Ajout d'un écouteur d'événements pour rediriger vers la page du film lorsque la carte est cliquée.
         card.addEventListener('click', () => {
+            const form = document.createElement('form');
+            form.method = 'get';
+            form.action = '../controllers/controller-OneMovie.php';
+            const inputId = document.createElement('input');
+            const inputMovieName = document.createElement('input');
+            inputId.type = 'hidden';
+            inputId.name = 'movie_id';
+            inputId.value = upcoming.id;
+            console.log(inputId.value);
+
+            inputMovieName.type = 'hidden';
+            inputMovieName.name = 'movie_name';
+            inputMovieName.value = upcoming.title;
+            console.log(inputMovieName.value);
+
+
+            form.appendChild(inputId);
+            form.appendChild(inputMovieName);
+
+            document.body.appendChild(form);
+            form.submit();
             window.location.href = `../controllers/controller-OneMovie.php?id=${upcoming.id}`;
         });
         // Ajout de la carte à l'élément HTML approprié.
