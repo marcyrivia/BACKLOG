@@ -4,7 +4,7 @@ require_once '../config/config.php';
 
 session_start();
 
-var_dump($_GET);
+
 // var_dump($_SESSION);
 // Assurez-vous que la classe Rating est incluse dans votre fichier PHP
 

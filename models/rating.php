@@ -73,7 +73,7 @@ class Rating {
              $db = new PDO("mysql:host=localhost;dbname=" . DB_NAME, DB_USER, DB_PASS);
  
              // stockage de ma requete dans une variable
-             $sql = "SELECT COUNT(*) FROM `movie` WHERE `movie_id` = :movie_id";
+             $sql = "SELECT * FROM `movie` WHERE `movie_id` = :movie_id";
  
              // je prepare ma requête pour éviter les injections SQL
              $query = $db->prepare($sql);
@@ -86,12 +86,11 @@ class Rating {
  
              // on récupère le résultat de la requête dans une variable
              $result = $query->fetch(PDO::FETCH_ASSOC);
- 
              // on vérifie si le résultat est vide car si c'est le cas, cela veut dire que le pseudo n'existe pas
-             if (empty($result)) {
-                 return false;
-             } else {
+             if ($result) {
                  return true;
+             } else {
+                 return false;
              }
          } catch (PDOException $e) {
              echo 'Erreur : ' . $e->getMessage();
