@@ -40,6 +40,22 @@
         </div>
        
       </div>
+
+<!-- DERNIERES ACTIVVITES -->
+
+<div class="last-activity-container">
+    <h2>Dernieres Activités</h2>
+    <hr>
+    <div id="infos" class="card-container">
+        <div class="card">
+          <div class="movie-container" name="last_activity1"></div>
+          <div class="movie-container" name="last_activity2"></div>
+          <div class="movie-container" name="last_activity3"></div>
+          <div class="movie-container" name="last_activity4"></div>
+        </div>
+    </div>
+</div>
+
     </div>
 
 </div>

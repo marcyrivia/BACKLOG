@@ -172,7 +172,7 @@ buttonSearch.addEventListener("click", function () {
                 window.location.href = `../controllers/controller-OneMovie.php?id=${movie.id}`;
             });
             
-            form.appendChild(card);
+            infos.appendChild(card);
         }
     });
     
