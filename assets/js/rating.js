@@ -1,4 +1,4 @@
-// RATING SYSTEM
+// Système de notation
 
 // Sélection de tous les éléments HTML avec la classe "stars"
 const stars = document.querySelectorAll(".stars");
@@ -12,10 +12,8 @@ stars.forEach((star, index) => {
     // Récupère la valeur de l'étoile cliquée à partir de son attribut data-value
     Note_score = Number(star.dataset.value);
 
-    // Affiche l'index de l'étoile cliquée dans la console
-    console.log(index + 1);
-    fetch("../controllers/controller-rating.php?rating=" + (index+1));
-
+    // Envoie la note au serveur via une requête fetch
+    fetch("../controllers/controller-rating.php?rating=" + (index + 1));
 
     // Met à jour visuellement les étoiles en fonction de l'étoile cliquée
     stars.forEach((star, i) => {

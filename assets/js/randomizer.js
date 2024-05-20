@@ -1,4 +1,4 @@
-
+// Options pour la requête API
 const options = {
     method: 'GET',
     headers: {
@@ -7,23 +7,30 @@ const options = {
     }
 };
 
-let randomBtn = document.querySelector('#ramdomBtn');
+// Sélection du bouton "Randomizer"
+let randomBtn = document.querySelector('#randomBtn');
 
-randomBtn.addEventListener("click", function (){
+// Ajout d'un écouteur d'événements pour le clic sur le bouton
+randomBtn.addEventListener("click", function () {
     let buttonContainer = document.querySelector(".button-container");
     let movieContainer = document.querySelector('.movie-container');
+
+    // Affichage du conteneur de films et ajustement de la marge du conteneur de bouton
     movieContainer.style.display = "flex";
     buttonContainer.style.marginBottom = "10rem";
     
-    // Nettoyer le contenu de movieContainer
+    // Nettoyage du contenu du conteneur de films
     movieContainer.innerHTML = '';
     
+    // Requête à l'API pour obtenir les films les mieux notés
     fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=2', options)
     .then(res => res.json())
     .then(data => {
+        // Sélection d'un film aléatoire parmi les résultats
         const randomIndex = Math.floor(Math.random() * data.results.length);
         const randomMovie = data.results[randomIndex];
         
+        // Création de l'élément carte pour afficher le film
         const card = document.createElement("div");
         card.classList.add("card");
         card.innerHTML = `
@@ -35,31 +42,12 @@ randomBtn.addEventListener("click", function (){
         </div>
         `;
         
+        // Ajout d'un écouteur d'événements pour rediriger vers la page de détails du film lorsqu'on clique sur la carte
         card.addEventListener('click', () => {
-            const form = document.createElement('form');
-            form.method = 'get';
-            form.action = '../controllers/controller-OneMovie.php';
-            const inputId = document.createElement('input');
-            const inputMovieName = document.createElement('input');
-            inputId.type = 'hidden';
-            inputId.name = 'movie_id';
-            inputId.value = randomMovie.id;
-            console.log(inputId.value);
-
-            inputMovieName.type = 'hidden';
-            inputMovieName.name = 'movie_name';
-            inputMovieName.value = randomMovie.title;
-            console.log(inputMovieName.value);
-
-
-            form.appendChild(inputId);
-            form.appendChild(inputMovieName);
-
-            document.body.appendChild(form);
-            form.submit();
             window.location.href = `../controllers/controller-OneMovie.php?id=${randomMovie.id}`;
         });
         
+        // Ajout de la carte au conteneur de films
         movieContainer.appendChild(card);
     });
 });

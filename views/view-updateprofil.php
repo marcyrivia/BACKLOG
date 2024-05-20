@@ -95,8 +95,7 @@
 
         <!-- Pseudo -->
         <input class="inputPseudo" name="user_pseudo" type="text" value="<?= $_SESSION['user']['user_pseudo']  ?>">
-        <!-- Limite de caractères pour le pseudo -->
-        <span> Limite de 15 caractères </span>
+  
         <!-- Message d'erreur pour le pseudo -->
         <span class="error"><?php if (isset($errors['user_pseudo'])) { echo $errors['user_pseudo']; } ?></span><br>
       </div>
@@ -145,5 +144,6 @@
 
   <!-- Scripts -->
   <script src="../assets/js/favGames.js"></script>
+
 </body>
 </html>

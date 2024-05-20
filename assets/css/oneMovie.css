@@ -1,104 +1,100 @@
 @font-face {
   font-family: "PoppinsSemiB"; /* Nom de la police */
-  src: url("../fonts/Poppins-SemiBold.ttf");
+  src: url("../fonts/Poppins-SemiBold.ttf"); /* Chemin vers la police */
 }
 
 * {
-  padding: 0;
-  margin: 0;
+  padding: 0; /* Réinitialise le padding de tous les éléments */
+  margin: 0; /* Réinitialise la marge de tous les éléments */
 }
 
 body {
-  font-family: "PoppinsSemiB", sans-serif;
-  background-color: #292626;
+  font-family: "PoppinsSemiB", sans-serif; /* Applique la police définie */
+  background-color: #292626; /* Définit la couleur de fond */
 }
 
-.container-fluid{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.container-fluid {
+  display: flex;
+  align-items: center; /* Centre les éléments verticalement */
+  justify-content: center; /* Centre les éléments horizontalement */
+  flex-direction: column; /* Aligne les éléments en colonne */
 }
-
 
 .container {
-  margin-top: 5rem;
+  margin-top: 5rem; /* Espace en haut de la container */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Centre les éléments verticalement */
+  flex-direction: column; /* Aligne les éléments en colonne */
 }
 
 img {
-  max-width: 100%;
-  height: 25rem;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  max-width: 100%; /* Largeur maximale de l'image */
+  height: 25rem; /* Hauteur fixe de l'image */
+  border-radius: 15px; /* Coins arrondis de l'image */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; /* Ombre autour de l'image */
 }
 
-#movie-title{
-    margin-top: 15px;
-    color: #35509c;
-    text-align: center;
+#movie-title {
+  margin-top: 15px; /* Espace en haut du titre du film */
+  color: #35509c; /* Couleur du titre */
+  text-align: center; /* Centre le texte */
 }
 
-#rated-movie{
-  color: #fefefe;
-  font-size: 3rem;
+#rated-movie {
+  color: #fefefe; /* Couleur de la note du film */
+  font-size: 3rem; /* Taille de la police de la note */
 }
 
-.navbar-infos{
-margin-top: 5px;
-display: flex;
-justify-content: center;
-align-items: center;
+.navbar-infos {
+  margin-top: 5px; /* Espace en haut de la barre d'informations */
+  display: flex;
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Centre les éléments verticalement */
 }
 
-#movie-release-date{
-    margin-left: 3rem;
-    font-size: 15px;
-    color: #fefefe;
-    
+#movie-release-date {
+  margin-left: 3rem; /* Espace à gauche de la date de sortie */
+  font-size: 15px; /* Taille de la police de la date de sortie */
+  color: #fefefe; /* Couleur de la date de sortie */
 }
 
-#movie-duration{
-    font-size: 15px;
-    color: #fefefe;
+#movie-duration {
+  font-size: 15px; /* Taille de la police de la durée du film */
+  color: #fefefe; /* Couleur de la durée du film */
 }
 
-.synopsis-container{
-    margin-top: 30px;
-    margin-bottom: 50px;
-    width: 90%;
-    /* text-align: center; */
-    display: flex;
-    text-align: justify; /* Justification */
-    text-align-last: center; /* Alignement du dernier bloc */
-    flex-direction: column;
+.synopsis-container {
+  margin-top: 30px; /* Espace en haut du container de synopsis */
+  margin-bottom: 50px; /* Espace en bas du container de synopsis */
+  width: 90%; /* Largeur du container de synopsis */
+  display: flex;
+  text-align: justify; /* Justifie le texte */
+  text-align-last: center; /* Centre le dernier bloc de texte */
+  flex-direction: column; /* Aligne les éléments en colonne */
+}
+
+.synopsis {
+  color: #35509c; /* Couleur de la section synopsis */
+}
+
+#movie-synopsis {
+  color: #fefefe; /* Couleur du texte du synopsis */
+}
+
+/* Classe pour les étoiles de notation */
+.stars {
+  font-size: 3rem; /* Taille des étoiles */
+  color: rgb(68, 65, 65); /* Couleur des étoiles par défaut */
+  cursor: pointer; /* Change le curseur en pointeur */
+  transition: color 0.2s ease; /* Transition douce de la couleur */
+}
+
+/* Classe pour le survol des étoiles */
+.hover {
+  color: #35509c; /* Couleur des étoiles au survol */
 }
 
 @media screen {
-  
-}
-
-.synopsis{
-    color: #35509c;
-}
-
-#movie-synopsis{
-  color: #fefefe;
-}
-
-/* rated */
-
-.stars{
-  font-size: 3rem;
-  color: rgb(68, 65, 65);
-  cursor: pointer;
-  transition: color 0.2 ease;
-}
-
-.hover{
-  color: #35509c;
+  /* Les règles de style pour les différents écrans peuvent être ajoutées ici */
 }

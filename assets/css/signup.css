@@ -1,42 +1,50 @@
+/* Définition de la police PoppinsSemiB */
 @font-face {
     font-family: "PoppinsSemiB";
     src: url("../fonts/Poppins-SemiBold.ttf");
 }
 
+/* Réinitialisation des marges et des paddings, et définition du box-sizing */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* Style global du body */
 body {
     font-family: "PoppinsSemiB", sans-serif;
     background-color: #292626;
 }
 
+/* Conteneur principal centré verticalement et horizontalement */
 .container {
-    height: 60vh; /* Utilisation de la hauteur de la fenêtre */
+    height: 60vh; /* Hauteur de la fenêtre */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Conteneur du formulaire */
 .connect-container {
-    background-color: #201e1e; /* Fond blanc pour le conteneur du formulaire */
+    background-color: #201e1e; /* Fond sombre pour le conteneur du formulaire */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
+/* Style du formulaire */
 form {
     width: 300px; /* Largeur du formulaire */
 }
 
+/* Style des labels */
 label {
     color: #35509c;
     font-size: 18px;
 }
 
+/* Style des champs de texte et des mots de passe */
 input[type="text"],
 input[type="password"] {
     width: 100%;
@@ -54,21 +62,24 @@ input[type="password"] {
     text-size-adjust: 3vh;
 }
 
+/* Style des messages d'erreur */
 .error {
     color: red;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
-.submit-container{
+/* Conteneur pour le bouton de soumission */
+.submit-container {
     display: flex;
     justify-content: center;
 }
 
+/* Style du bouton de soumission */
 input[type="submit"] {
     padding: 10px 20px;
     background-color: #35509c;
-    color: white;
+    color: Qwhite;
     border: none;
     border-radius: 5px;
     font-size: 18px;
@@ -76,21 +87,24 @@ input[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
+/* Effet hover pour le bouton de soumission */
 input[type="submit"]:hover {
     background-color: #2a4079;
 }
 
-
+/* Conteneur pour le lien de connexion */
 .signin-container {
     text-align: center;
     margin-top: 20px;
 }
 
+/* Style du texte dans le conteneur de connexion */
 .signin-p {
     color: white;
     font-size: 16px;
 }
 
+/* Style du bouton de connexion */
 .signin {
     padding: 10px 20px;
     background-color: #35509c;
@@ -103,6 +117,7 @@ input[type="submit"]:hover {
     transition: background-color 0.3s ease;
 }
 
+/* Effet hover pour le bouton de connexion */
 .signin:hover {
     background-color: #2a4079;
 }

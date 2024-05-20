@@ -14,7 +14,7 @@ body {
 }
 
 .userPic {
-  width : 50px;
+  width: 50px;
   height: 40px;
 }
 
@@ -28,20 +28,25 @@ body {
 .pseudo {
   font-weight: bold;
   color: #fefefe;
-
 }
 
-.welcome{
+.welcome {
   color: #fefefe;
 }
 
-
-.release-container{
+.release-container {
   margin-top: 20px;
   margin-bottom: 35px;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 
+  padding-bottom: 10rem;
+}
 
 .card {
   position: relative;
@@ -59,7 +64,7 @@ body {
   border-radius: 15px;
 }
 
-.overlayF{
+.overlayF {
   position: absolute;
   top: 0;
   left: 0;
@@ -96,6 +101,6 @@ hr {
   border: 1px solid #3d3838;
 }
 
-.hrDeux{
+.hrDeux {
   width: 8%;
 }

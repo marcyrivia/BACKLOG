@@ -19,12 +19,9 @@ if(isset($_GET['rating'])) {
     // Insère la note dans la base de données en utilisant la méthode createRating de la classe Rating
     Rating::createRating($rating, $user_id); // Assurez-vous d'avoir $user_id défini
 
-    // Répond au client avec un message de succès (facultatif)
-    // echo "Note insérée avec succès dans la base de données.";
+
 }
 
-// Contrôleur - Gestion de la logique métier
 
-// Vérifications et traitements du formulaire ici
 
 ?>

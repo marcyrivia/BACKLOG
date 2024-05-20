@@ -419,25 +419,25 @@ hr {
 
 
 @media only screen and (max-width: 1720px) {
-  .gamesDiv {
+  .moviesDiv {
     padding: 0 50px;
   }
 }
 @media only screen and (max-width: 1286px) {
-  .games {
+  .movies {
     height: 20rem;
     width: 15rem;
   }
 }
 
 @media only screen and (max-width: 1060px) {
-  .games {
+  .movies {
     height: 15rem;
     width: 10rem;
   }
 }
 @media only screen and (max-width: 416px) {
-  .games {
+  .movies {
     height: 10rem;
     width: 50%;
     margin-left: 10px;

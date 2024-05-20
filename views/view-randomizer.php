@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/randomizer.css" />
-    <title>Elargisez vos horizons</title>
+    <title>Élargissez vos horizons</title> <!-- Correction du titre pour une meilleure orthographe -->
 </head>
 <body>
     <!-- HEADER -->
-     <?php include_once '../assets/header.php' ?> 
+    <?php include_once '../assets/header.php'; ?> 
     <!-- FIN DU HEADER -->
 
-  <div class="container">
-    <div class="spanP">
-        <span class="presentation">
-        Pour élargir votre culture... Cliquez sur le bouton, un film vous sera donnez !
-        </span>  
+    <div class="container">
+        <div class="spanP">
+            <span class="presentation">
+                Pour élargir votre culture... Cliquez sur le bouton, un film vous sera donné !
+            </span>  
+        </div>
+
+        <div class="movie-container">
+            <!-- js inner html -->
+        </div>
+        
+        <div class="button-container">
+            <button id="randomBtn" class="randomBtn">Randomizer</button> <!-- Correction de l'ID du bouton -->
+        </div>
     </div>
 
-    <div class="movie-container">
-    <!-- js inner html -->
-    </div>
-    
-    <div class="button-container">
-        <button id="ramdomBtn" class="randomBtn">Randomizer</button>
-    </div>
-  </div>
+    <!-- FOOTER -->
+    <?php include_once '../assets/footer.php'; ?> 
+    <!-- FIN DU FOOTER -->
 
-        <!-- FOOTER -->
-        <?php include_once '../assets/footer.php' ?> 
-<!-- FIN FOOTER -->
-
-<script src="../assets/js/randomizer.js"></script>
+    <script src="../assets/js/randomizer.js"></script> <!-- Correction du nom de fichier JavaScript -->
 </body>
 </html>

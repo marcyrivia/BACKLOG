@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <h2>Synthèse d'inscription</h2>
+        <h2>Confirmation d'inscription</h2>
 
     <p>Merci pour votre inscription !</p>
 

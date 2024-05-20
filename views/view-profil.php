@@ -33,21 +33,26 @@
         <h2 class="favmovietext">Vos films favoris</h2>
         <hr>
         <div class="containerDiv">
-           <div class="movie-container" id="movie1" value="<?= $fav_movie_1 ?>">  </div>
-           <div class="movie-container" id="movie2" value="<?= $fav_movie_2 ?>"></div>
-           <div class="movie-container" id="movie3" value="<?= $fav_movie_3 ?>"></div>
-           <div class="movie-container" id="movie4" value="<?= $fav_movie_4 ?>"></div>
+        <div class="favorite-movies">
+    <?php
+    if (!empty($fav_movie_1)) {echo '<div class="movie-container" id="movie1" value="' . ($fav_movie_1) . '"></div>'; }
+    if (!empty($fav_movie_2)) { echo '<div class="movie-container" id="movie2" value="' . ($fav_movie_2) . '"></div>';}
+    if (!empty($fav_movie_3)) { echo '<div class="movie-container" id="movie3" value="' . ($fav_movie_3) . '"></div>'; }
+    if (!empty($fav_movie_4)) {echo '<div class="movie-container" id="movie4" value="' . ($fav_movie_4) . '"></div>'; }
+    ?>
+</div>
+
         </div>
        
       </div>
 
 <!-- DERNIERES ACTIVVITES -->
 
-<div class="last-activity-container">
-    <h2>Dernieres Activités</h2>
+<!-- <div class="lastest-activity-container">
+    <h2 class="lastest-activity">Dernieres Activités</h2>
     <hr>
     <div id="infos" class="card-container">
-        <div class="card">
+        <div class="latest-activity-card">
           <div class="movie-container" name="last_activity1"></div>
           <div class="movie-container" name="last_activity2"></div>
           <div class="movie-container" name="last_activity3"></div>
@@ -56,7 +61,7 @@
     </div>
 </div>
 
-    </div>
+    </div> -->
 
 </div>
     <!-- FIN INFORMARTIONS PROFIL -->

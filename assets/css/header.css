@@ -1,19 +1,26 @@
-@font-face {
-  /* font-family: "MoonGet";
-  src: url("../fonts/moon_get-Heavy.ttf"); */
-}
 
+
+/* Importation des polices personnalisées */
+ @font-face {
+  font-family: "MoonGet";
+  src: url("../fonts/moon_get-Heavy.ttf");
+} 
+
+/* Réinitialisation des marges et des paddings pour tous les éléments */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Styles globaux pour le body */
 body {
+  /* Vous pouvez ajouter des styles globaux ici */
 }
 
 /* HEADER */
 
+/* Styles pour le header */
 header {
   width: 100%;
   height: 6vh;
@@ -24,24 +31,29 @@ header {
   background: #35509c;
 }
 
+/* Styles pour le logo */
 .logo {
   color: #fefefe;
 }
 
+/* Styles pour le lien du logo */
 .a-logo {
   text-decoration: none;
 }
 
+/* Styles pour la barre de navigation */
 .navbar ul {
   display: flex;
   align-items: center;
 }
 
+/* Styles pour les éléments de la liste de navigation */
 .navbar li {
   list-style: none;
   text-decoration: none;
 }
 
+/* Styles pour les liens de la navigation */
 .navbar ul li a {
   list-style: none;
   text-decoration: none;
@@ -54,52 +66,60 @@ header {
   margin: 0 5px;
 }
 
+/* Styles pour l'image de l'utilisateur dans le header */
 .userPicH {
-  width : 25PX;
+  width: 25px;
   height: 25px;
 }
 
+/* Effet de survol pour les liens de la navigation */
 .navbar ul li a:hover {
   color: #415fb3;
   background: #fefefe;
 }
 
+/* Styles pour le lien de déconnexion */
 .navbar .deconnect {
   color: #b00202;
-} /* Correction: Ajout du point-virgule à la fin */
+}
 
+/* Effet de survol pour le lien de déconnexion */
 .navbar .deconnect:hover {
   color: #fefefe;
   background: #b00202;
 }
 
-/* #searchBar {
-  height: 25px;
-  border: solid 1px #292626;
-  padding: 0 10px 0 10px;
-  border-radius: 5px;
-  background-color: #35509c;
-} */
 
+/* Styles pour le menu burger (initialement caché) */
 .menu-burger {
   display: none;
 }
 
+/* Media queries pour les différentes largeurs d'écran */
+
+/* Réduction du padding pour les écrans de 1320px et moins */
 @media only screen and (max-width: 1320px) {
   header {
     padding: 0 50px;
   }
 }
+
+/* Réduction du padding pour les écrans de 1100px et moins */
 @media only screen and (max-width: 1100px) {
   header {
     padding: 0 50px;
   }
 }
+
+/* Styles pour les écrans de 1014px et moins */
 @media only screen and (max-width: 1014px) {
+  /* Affichage du menu burger */
   .menu-burger {
     display: block;
     cursor: pointer;
   }
+  
+  /* Styles pour l'icône du menu burger */
   .menu-burger .bi-list {
     width: 30px;
     height: 3px;
@@ -107,6 +127,8 @@ header {
     color: #fefefe;
     margin: 6px 0;
   }
+
+  /* Styles pour la barre de navigation */
   .navbar {
     height: 0;
     position: absolute;
@@ -120,10 +142,12 @@ header {
     z-index: 2;
   }
 
+  /* Hauteur de la barre de navigation quand elle est active */
   .navbar.active {
     height: 400px;
   }
 
+  /* Styles pour la liste de navigation */
   .navbar .nav-list {
     display: block;
     width: fit-content;
@@ -133,14 +157,16 @@ header {
     opacity: 0;
   }
 
+  /* Opacité de la liste de navigation quand elle est active */
   .navbar.active .nav-list {
     opacity: 1;
   }
 
+  /* Marges pour les liens de la navigation dans les petits écrans */
   .navbar ul li a {
     margin-bottom: 8px;
     margin-top: 15px;
   }
 }
 
-/* FIN HEADER  */
+/* FIN HEADER */
