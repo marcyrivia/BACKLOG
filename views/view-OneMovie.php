@@ -18,15 +18,16 @@
             <span id="rated-movie">**%</span>
         </div>
 
-        <form action="controller-oneMovie.php" method="get">
+        <!-- <form action="controller-oneMovie.php" method="get"> -->
             <div class="star-container">
-                <i class="stars bi-star-fill" name="rating" ></i>
-                <i class="stars bi-star-fill" name="rating" ></i>
-                <i class="stars bi-star-fill" name="rating" ></i>
-                <i class="stars bi-star-fill" name="rating" ></i>
-                <i class="stars bi-star-fill" name="rating" ></i>
+<i class="stars  bi-star-fill <?= intval($rating) >= 1 ? 'hover' : '' ?>" name="rating"></i>
+<i class="stars  bi-star-fill <?= intval($rating) >= 2 ? 'hover' : '' ?>" name="rating"></i>
+<i class="stars  bi-star-fill <?= intval($rating) >= 3 ? 'hover' : '' ?>" name="rating"></i>
+<i class="stars  bi-star-fill <?= intval($rating) >= 4 ? 'hover' : '' ?>" name="rating"></i>
+<i class="stars  bi-star-fill <?= intval($rating) >= 5 ? 'hover' : '' ?>" name="rating"></i>
+```
             </div>
-        </form>
+        <!-- </form> -->
       
         <div class="navbar-infos">
             <span id="movie-duration">Durée du Film</span>

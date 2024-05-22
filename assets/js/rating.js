@@ -1,4 +1,7 @@
 // Système de notation
+// const urlParams = new URLSearchParams(window.location.search);
+const movie_Id = urlParams.get("id");
+const rating = urlParams.get("rating");
 
 // Sélection de tous les éléments HTML avec la classe "stars"
 const stars = document.querySelectorAll(".stars");
@@ -13,7 +16,7 @@ stars.forEach((star, index) => {
     Note_score = Number(star.dataset.value);
 
     // Envoie la note au serveur via une requête fetch
-    fetch("../controllers/controller-rating.php?rating=" + (index + 1));
+    fetch("../controllers/controller-rating.php?movieId=" + movie_Id + "&rating=" + (index + 1) );
 
     // Met à jour visuellement les étoiles en fonction de l'étoile cliquée
     stars.forEach((star, i) => {

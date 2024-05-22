@@ -137,9 +137,9 @@
         <input class="valid" type="submit" value="Sauvegarder">
       </div>
     </form>
-    <form action="" method="post" onsubmit="return confirm" (Voulez-vous supprimervotre profil ?)>
+    <!-- <form action="" method="post" onsubmit="return confirm" (Voulez-vous supprimervotre profil ?)>
     <a href="../controllers/controller-deleteUser.php"><button class="delete">Supprimer mon compte <i class="bi bi-trash3-fill"></i></button></a>
-    </form>
+    </form> -->
   </div>
 
   <!-- Scripts -->
