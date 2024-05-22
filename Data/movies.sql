@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 15 mai 2024 à 13:30
+-- Généré le : mer. 22 mai 2024 à 17:49
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `games`
+-- Base de données : `movies`
 --
 
 -- --------------------------------------------------------
@@ -49,34 +49,12 @@ CREATE TABLE `jeu_a_une_note` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `le_jeu_a_un_genre`
---
-
-CREATE TABLE `le_jeu_a_un_genre` (
-  `games_id` int NOT NULL,
-  `genre_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `list`
 --
 
 CREATE TABLE `list` (
   `list_id` int NOT NULL,
   `list_name` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `l_user_a_une_review`
---
-
-CREATE TABLE `l_user_a_une_review` (
-  `user_id` int NOT NULL,
-  `review_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -110,12 +88,17 @@ CREATE TABLE `movie` (
 
 INSERT INTO `movie` (`movie_id`, `movie_name`, `movie_release`, `movie_synopsis`, `studio_id`) VALUES
 (1, NULL, NULL, NULL, NULL),
+(1895, NULL, NULL, NULL, NULL),
+(40096, NULL, NULL, NULL, NULL),
 (438631, NULL, NULL, NULL, NULL),
 (634492, NULL, NULL, NULL, NULL),
 (653346, NULL, NULL, NULL, NULL),
+(786892, NULL, NULL, NULL, NULL),
 (823464, NULL, NULL, NULL, NULL),
 (1011985, NULL, NULL, NULL, NULL),
+(1022789, NULL, NULL, NULL, NULL),
 (1062807, NULL, NULL, NULL, NULL),
+(1087388, NULL, NULL, NULL, NULL),
 (1096197, NULL, NULL, NULL, NULL),
 (1105407, NULL, NULL, NULL, NULL),
 (1219685, NULL, NULL, NULL, NULL);
@@ -129,64 +112,75 @@ INSERT INTO `movie` (`movie_id`, `movie_name`, `movie_release`, `movie_synopsis`
 CREATE TABLE `note` (
   `Note_id` int NOT NULL,
   `Note_score` varchar(50) DEFAULT NULL,
-  `user_id` int NOT NULL
+  `user_id` int NOT NULL,
+  `movie_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `note`
 --
 
-INSERT INTO `note` (`Note_id`, `Note_score`, `user_id`) VALUES
-(1, '1', 1),
-(2, '3', 1),
-(3, '3', 1),
-(4, '5', 1),
-(5, '4', 1),
-(6, '5', 1),
-(7, '4', 1),
-(8, '4', 1),
-(9, '5', 1),
-(10, '3', 1),
-(11, '3', 1),
-(12, '4', 1),
-(13, '5', 1),
-(14, '4', 1),
-(15, '3', 1),
-(16, '3', 1),
-(17, '3', 1),
-(18, '3', 1),
-(19, '3', 1),
-(20, '3', 1),
-(21, '3', 1),
-(22, '2', 1),
-(23, '2', 1),
-(24, '2', 1),
-(25, '3', 1),
-(26, '1', 1),
-(27, '1', 1),
-(28, '2', 1),
-(29, '2', 1),
-(30, '2', 1),
-(31, '2', 1),
-(32, '3', 1),
-(33, '3', 1),
-(34, '3', 1),
-(35, '4', 1),
-(36, '1', 1),
-(37, '5', 1),
-(38, '3', 1),
-(39, '4!', 1),
-(40, '4!', 1),
-(41, '4!', 1),
-(42, '4!', 1),
-(43, '5', 1),
-(44, '5', 1),
-(45, '3', 5),
-(46, '3', 5),
-(47, '3', 5),
-(48, '3', 5),
-(49, '4', 5),
-(50, '2', 5);
+INSERT INTO `note` (`Note_id`, `Note_score`, `user_id`, `movie_id`) VALUES
+(1, '1', 1, 0),
+(2, '3', 1, 0),
+(3, '3', 1, 0),
+(4, '5', 1, 0),
+(5, '4', 1, 0),
+(6, '5', 1, 0),
+(7, '4', 1, 0),
+(8, '4', 1, 0),
+(9, '5', 1, 0),
+(10, '3', 1, 0),
+(11, '3', 1, 0),
+(12, '4', 1, 0),
+(13, '5', 1, 0),
+(14, '4', 1, 0),
+(15, '3', 1, 0),
+(16, '3', 1, 0),
+(17, '3', 1, 0),
+(18, '3', 1, 0),
+(19, '3', 1, 0),
+(20, '3', 1, 0),
+(21, '3', 1, 0),
+(22, '2', 1, 0),
+(23, '2', 1, 0),
+(24, '2', 1, 0),
+(25, '3', 1, 0),
+(26, '1', 1, 0),
+(27, '1', 1, 0),
+(28, '2', 1, 0),
+(29, '2', 1, 0),
+(30, '2', 1, 0),
+(31, '2', 1, 0),
+(32, '3', 1, 0),
+(33, '3', 1, 0),
+(34, '3', 1, 0),
+(35, '4', 1, 0),
+(36, '1', 1, 0),
+(37, '5', 1, 0),
+(38, '3', 1, 0),
+(39, '4!', 1, 0),
+(40, '4!', 1, 0),
+(41, '4!', 1, 0),
+(42, '4!', 1, 0),
+(43, '5', 1, 0),
+(44, '5', 1, 0),
+(45, '3', 5, 0),
+(46, '3', 5, 0),
+(47, '3', 5, 0),
+(48, '3', 5, 0),
+(49, '4', 5, 0),
+(50, '2', 5, 0),
+(51, '5', 1, 0),
+(52, '5', 1, 653346),
+(53, '(index   1)', 1, 653346),
+(54, '3', 1, 653346),
+(55, '3', 1, 653346),
+(56, '5', 1, 653346),
+(57, '4', 1, 653346),
+(58, '1', 1, 823464),
+(59, '5', 1, 823464),
+(60, '3', 1, 823464);
 
 -- --------------------------------------------------------
 
@@ -227,17 +221,6 @@ CREATE TABLE `studio` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `un_jeu_a_une_review`
---
-
-CREATE TABLE `un_jeu_a_une_review` (
-  `games_id` int NOT NULL,
-  `review_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `userprofil`
 --
 
@@ -260,7 +243,7 @@ CREATE TABLE `userprofil` (
 --
 
 INSERT INTO `userprofil` (`user_id`, `user_validate`, `user_pseudo`, `user_email`, `user_password`, `user_descr`, `user_picture`, `fav_movie_1`, `fav_movie_2`, `fav_movie_3`, `fav_movie_4`) VALUES
-(1, 1, 'Toph', 'azaezae@gmail.com', '$2y$10$BeXs/7Uv/fYWcwZHZAUoJ.ICDGxNi35Rj47Cx2cfTnloVqyxjb/zS', '                                                              my discvoveries of the year dumbass', 'Avatar_TheLastAirbender_Cartoon_Series_TophBeifong.jpg', 553610, 1893, 685274, 1024621),
+(1, 1, 'YOTSUBA', 'azaezae@gmail.com', '$2y$10$BeXs/7Uv/fYWcwZHZAUoJ.ICDGxNi35Rj47Cx2cfTnloVqyxjb/zS', '                                                               my discvoveries of the year dumbass', 'b3adec320cd385cfdedd77f4475e2a1c.webp', 51739, 98631, 330459, 140607),
 (2, 1, 'popo', 'popo@gmail.com', '$2y$10$fifCZmmIgW0kq0ro2jbSae/u4Q2gVU99HDM7swzlLTUVaRIgRUFMm', NULL, 'default.png', NULL, NULL, NULL, NULL),
 (3, 1, 'momo', 'momo@gmail.com', '$2y$10$79SuPDioCGRs01x0t75.luBA6OjQnxJ2dhPi6GwM4ahh.e1.IiwFC', NULL, 'default.png', NULL, NULL, NULL, NULL),
 (4, 1, 'azeaze', 'lolo@gmail.com', '$2y$10$4f6nUkzVyUXs1eleFikUXeHOwXzXn0XsOn729ypxmzq5Ise1KB4UK', NULL, 'default.png', NULL, NULL, NULL, NULL),
@@ -306,24 +289,10 @@ ALTER TABLE `jeu_a_une_note`
   ADD KEY `Note_id` (`Note_id`);
 
 --
--- Index pour la table `le_jeu_a_un_genre`
---
-ALTER TABLE `le_jeu_a_un_genre`
-  ADD PRIMARY KEY (`games_id`,`genre_id`),
-  ADD KEY `genre_id` (`genre_id`);
-
---
 -- Index pour la table `list`
 --
 ALTER TABLE `list`
   ADD PRIMARY KEY (`list_id`);
-
---
--- Index pour la table `l_user_a_une_review`
---
-ALTER TABLE `l_user_a_une_review`
-  ADD PRIMARY KEY (`user_id`,`review_id`),
-  ADD KEY `review_id` (`review_id`);
 
 --
 -- Index pour la table `momo`
@@ -364,13 +333,6 @@ ALTER TABLE `review`
 --
 ALTER TABLE `studio`
   ADD PRIMARY KEY (`studio_id`);
-
---
--- Index pour la table `un_jeu_a_une_review`
---
-ALTER TABLE `un_jeu_a_une_review`
-  ADD PRIMARY KEY (`games_id`,`review_id`),
-  ADD KEY `review_id` (`review_id`);
 
 --
 -- Index pour la table `userprofil`
@@ -424,7 +386,7 @@ ALTER TABLE `movie`
 -- AUTO_INCREMENT pour la table `note`
 --
 ALTER TABLE `note`
-  MODIFY `Note_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `Note_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT pour la table `plateformes`
@@ -462,20 +424,6 @@ ALTER TABLE `jeu_a_une_note`
   ADD CONSTRAINT `jeu_a_une_note_ibfk_2` FOREIGN KEY (`Note_id`) REFERENCES `note` (`Note_id`);
 
 --
--- Contraintes pour la table `le_jeu_a_un_genre`
---
-ALTER TABLE `le_jeu_a_un_genre`
-  ADD CONSTRAINT `le_jeu_a_un_genre_ibfk_1` FOREIGN KEY (`games_id`) REFERENCES `movie` (`movie_id`),
-  ADD CONSTRAINT `le_jeu_a_un_genre_ibfk_2` FOREIGN KEY (`genre_id`) REFERENCES `momo` (`genre_id`);
-
---
--- Contraintes pour la table `l_user_a_une_review`
---
-ALTER TABLE `l_user_a_une_review`
-  ADD CONSTRAINT `l_user_a_une_review_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `userprofil` (`user_id`),
-  ADD CONSTRAINT `l_user_a_une_review_ibfk_2` FOREIGN KEY (`review_id`) REFERENCES `review` (`review_id`);
-
---
 -- Contraintes pour la table `movie`
 --
 ALTER TABLE `movie`
@@ -497,14 +445,7 @@ ALTER TABLE `plateformes`
 -- Contraintes pour la table `review`
 --
 ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `userprofil` (`user_id`);
-
---
--- Contraintes pour la table `un_jeu_a_une_review`
---
-ALTER TABLE `un_jeu_a_une_review`
-  ADD CONSTRAINT `un_jeu_a_une_review_ibfk_1` FOREIGN KEY (`games_id`) REFERENCES `movie` (`movie_id`),
-  ADD CONSTRAINT `un_jeu_a_une_review_ibfk_2` FOREIGN KEY (`review_id`) REFERENCES `review` (`review_id`);
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `userprofil` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `user_a_une_liste`
